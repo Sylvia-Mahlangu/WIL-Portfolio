@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My WIL Portfolio | DENIS</title>
+<style>
+:root {
+  --navy: #102342;
+  --blue: #1769e8;
+  --pale: #edf4ff;
+  --ink: #172b4d;
+  --muted: #61718a;
+  --line: #dfe8f5;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f8fd;
+  color: var(--ink);
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.layout { min-height: 100vh; }
+.sidebar {
+  width: 245px;
+  background: linear-gradient(165deg, #10213e, #07172e);
+  color: white;
+  padding: 30px 19px;
+  position: fixed;
+  inset: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+.brand { font-size: 25px; font-weight: 800; margin: 0 0 7px; }
+.role { color: #c5d5ed; font-size: 13px; line-height: 1.6; }
+.nav { margin-top: 34px; display: grid; gap: 9px; }
+.nav a {
+  color: #e9f0fb;
+  padding: 13px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+.nav a:first-child, .nav a:hover {
+  background: var(--blue);
+  text-decoration: none;
+}
+.quote {
+  margin-top: auto;
+  padding: 24px 0 18px;
+  color: #b9cbe5;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.side-footer {
+  border-top: 1px solid #52637b;
+  padding-top: 16px;
+  font-size: 12px;
+  color: #c5d5ed;
+}
+main { margin-left: 245px; padding: 30px; }
+.hero {
+  border: 1px solid #d7e6fc;
+  border-radius: 15px;
+  padding: 35px;
+  background: linear-gradient(120deg, #e7f1ff, #ffffff);
+  overflow: hidden;
+}
+.eyebrow {
+  color: #1457b7;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-weight: 800;
+  font-size: 12px;
+}
+h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; margin: 14px 0; }
+h1 span { color: var(--blue); }
+.hero h2 { font-size: 19px; margin: 0 0 15px; font-weight: 600; }
+.hero p { max-width: 640px; color: #425875; line-height: 1.8; }
+.buttons { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 23px; }
+.btn {
+  display: inline-block;
+  border: 1px solid var(--blue);
+  border-radius: 9px;
+  padding: 12px 17px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.btn.primary { background: var(--blue); color: white; }
+.btn.secondary { color: var(--blue); background: white; }
+.section { padding-top: 37px; scroll-margin-top: 20px; }
+.section-heading { display: flex; gap: 14px; align-items: center; margin-bottom: 7px; }
+.section-icon {
+  display: grid; place-items: center;
+  width: 42px; height: 42px; border-radius: 11px;
+  background: #e2edff; font-size: 22px;
+}
+h2 { margin: 0; font-size: 23px; }
+.intro { color: var(--muted); margin: 6px 0 20px; line-height: 1.7; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 19px;
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px #142d4b12; }
+.card-icon {
+  width: 43px; height: 43px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: #e8f1ff; font-size: 22px; margin-bottom: 12px;
+}
+.card h3 { margin: 0 0 9px; font-size: 15px; }
+.card p { color: var(--muted); font-size: 13px; line-height: 1.65; margin: 0 0 16px; }
+.card a { margin-top: auto; font-size: 13px; font-weight: 700; }
+.panel {
+  margin-top: 32px;
+  background: linear-gradient(110deg, #eaf3ff, #fff);
+  border: 1px solid #dce8fa;
+  border-radius: 13px;
+  padding: 24px;
+  line-height: 1.8;
+}
+.panel p { color: #52647e; font-size: 14px; }
+footer { padding: 28px 0 8px; text-align: center; color: var(--muted); font-size: 12px; }
+@media (max-width: 1050px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .sidebar { position: relative; width: 100%; padding: 20px; }
+  .nav { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+  .quote, .side-footer { display: none; }
+  main { margin-left: 0; padding: 17px; }
+  .hero { padding: 24px; }
+  .grid { grid-template-columns: 1fr; }
+  h1 { font-size: 34px; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">My Portfolio</div>
+    <div class="role">ICT | Application Development<br>CPUT · WIL 2026</div>
+    <nav class="nav">
+      <a href="#home">⌂ &nbsp; Home</a>
+      <a href="#placement">▣ &nbsp; Industry Placement</a>
+      <a href="#projects">⚙ &nbsp; WIL Projects</a>
+      <a href="#agile">▤ &nbsp; Agile Documents</a>
+      <a href="#reflection">♡ &nbsp; Reflection</a>
+      <a href="#contact">✉ &nbsp; Contact</a>
+    </nav>
+    <div class="quote">“Small steps today,<br>big growth tomorrow.”</div>
+    <div class="side-footer">Work Integrated Learning<br>Cape Peninsula University of Technology</div>
+  </aside>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="eyebrow">Welcome to my portfolio</div>
+      <h1>Hello, I'm <span>[Your Name]</span> 👋</h1>
+      <h2>ICT Student | Application Development</h2>
+      <p>
+        Welcome to my Work Integrated Learning portfolio. This website
+        presents my learning journey at DENIS in the IT Department,
+        including my workplace experience, project documentation, Agile
+        planning activities and personal reflections.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#agile">▣ &nbsp; Explore My Portfolio</a>
+        <a class="btn secondary" href="#placement">↓ &nbsp; My WIL Journey</a>
+      </div>
+    </section>
+
+    <section class="section" id="placement">
+      <div class="section-heading">
+        <div class="section-icon">🏢</div>
+        <div><h2>Industry Placement</h2></div>
+      </div>
+      <p class="intro">My workplace learning experience at DENIS — IT Department.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">🏢</div>
+          <h3>Industry Placement</h3>
+          <p>My placement details, learning objectives, responsibilities and professional development.</p>
+          <a href="docs/industry-placement.md">View document →</a>
+        </article>
+        <article class="card" id="projects">
+          <div class="card-icon">💻</div>
+          <h3>WIL Projects</h3>
+          <p>An overview of my workplace projects, contributions, learning activities and evidence.</p>
+          <a href="docs/wil-projects.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Learning Goals</h3>
+          <p>The skills I aim to develop and how I connect my studies with practical experience.</p>
+          <a href="#reflection">View reflection →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="agile">
+      <div class="section-heading">
+        <div class="section-icon">📋</div>
+        <h2>Agile Project Documentation</h2>
+      </div>
+      <p class="intro">My documentation is organised into workplace projects and the Entrepreneurial WIL Project.</p>
+      <h3>Workplace Projects — DENIS</h3>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">👥</div>
+          <h3>Agile Team Charter</h3>
+          <p>Team purpose, shared values, roles and working agreements for the workplace project.</p>
+          <a href="docs/agile-team-charter.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">📝</div>
+          <h3>User Stories and Tasks</h3>
+          <p>User needs, requirements and the tasks needed to address them.</p>
+          <a href="docs/company-user-stories.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">🗂️</div>
+          <h3>Product Backlog</h3>
+          <p>A prioritised list of project requirements and improvements.</p>
+          <a href="docs/company-product-backlog.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">⏱️</div>
+          <h3>Sprint Backlog</h3>
+          <p>The tasks selected for a sprint, progress updates and blockers.</p>
+          <a href="docs/company-sprint-backlog.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">📔</div>
+          <h3>Agile Logbook</h3>
+          <p>Dated activities, achievements, challenges and learning reflections.</p>
+          <a href="docs/company-agile-logbook.md">View document →</a>
+        </article>
+      </div>
+
+      <h3 style="margin-top:30px">Entrepreneurial WIL Project</h3>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">🚀</div>
+          <h3>Agile Project Charter</h3>
+          <p>The entrepreneurial project's purpose, objectives, scope and stakeholders.</p>
+          <a href="docs/agile-project-charter.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">📝</div>
+          <h3>User Stories and Tasks</h3>
+          <p>User requirements and development tasks for the entrepreneurial project.</p>
+          <a href="docs/entrepreneurial-user-stories.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">🗂️</div>
+          <h3>Product Backlog</h3>
+          <p>Prioritised features, requirements and improvements for the project.</p>
+          <a href="docs/entrepreneurial-product-backlog.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">⏱️</div>
+          <h3>Sprint Backlog</h3>
+          <p>Planned sprint work, tasks and progress toward the sprint goal.</p>
+          <a href="docs/entrepreneurial-sprint-backlog.md">View document →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">📔</div>
+          <h3>Agile Logbook</h3>
+          <p>Project activities, progress, challenges and retrospective reflections.</p>
+          <a href="docs/entrepreneurial-agile-logbook.md">View document →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reflection">
+      <div class="section-heading">
+        <div class="section-icon">🌱</div>
+        <h2>My Learning and Reflection</h2>
+      </div>
+      <div class="panel">
+        <h3>Growing as an IT Professional</h3>
+        <p>
+          My WIL portfolio will document what I learn, how I contribute,
+          the challenges I encounter and the steps I take to improve.
+          Each reflection will be supported by appropriate evidence of
+          my own activities and learning.
+        </p>
+        <p><strong>My focus:</strong> technical development, problem-solving,
+        communication, teamwork and professional growth.</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-heading">
+        <div class="section-icon">✉️</div>
+        <h2>Portfolio Information</h2>
+      </div>
+      <div class="panel">
+        <p><strong>Student:</strong> [Your Name]</p>
+        <p><strong>Institution:</strong> Cape Peninsula University of Technology</p>
+        <p><strong>Placement:</strong> DENIS — IT Department</p>
+        <p><strong>Portfolio:</strong> Work Integrated Learning, 2026</p>
+        <p>Thank you for visiting my portfolio.</p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 · WIL Portfolio · CPUT · ICT Application Development
+    </footer>
+  </main>
+</div>
+</body>
+</html>
