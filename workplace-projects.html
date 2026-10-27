@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workplace Projects | Sylvia Mahlangu</title>
+<style>
+:root {
+  --dark: #171410;
+  --panel: #241d17;
+  --gold: #c5a16b;
+  --cream: #f5efe4;
+  --muted: #c4b8a7;
+  --line: #59452f;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--dark);
+  color: var(--cream);
+  font-family: var(--sans);
+}
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+.topbar {
+  padding: 13px 0;
+  background: #100e0c;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.topbar .wrap, nav, footer .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+header { border-bottom: 1px solid var(--line); }
+nav { padding: 22px 0; }
+.brand { font: 24px var(--serif); }
+.brand span { color: var(--gold); }
+.navlinks { display: flex; gap: 22px; align-items: center; }
+.navlinks a {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.navlinks a:hover, footer a:hover { color: var(--gold); }
+.back {
+  border: 1px solid var(--gold);
+  padding: 11px 14px;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 90% 30%, #60432a 0%, transparent 37%),
+    linear-gradient(125deg, #171410, #30231a);
+  border-bottom: 1px solid var(--line);
+}
+.hero:after {
+  content: "W";
+  position: absolute;
+  right: 2%;
+  top: -120px;
+  color: #c5a16b0b;
+  font: 500 500px var(--serif);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 100px 0 85px;
+  max-width: 850px;
+}
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h1 {
+  font: 400 clamp(54px, 9vw, 100px)/.98 var(--serif);
+  letter-spacing: -3px;
+  margin: 25px 0;
+}
+h1 em { color: var(--gold); font-weight: 400; }
+.hero p {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+}
+.hero-meta {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+.meta {
+  border-top: 1px solid var(--gold);
+  padding-top: 12px;
+  font: 19px var(--serif);
+}
+.meta small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font: 9px var(--sans);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.gold-strip {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 14px 0;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.gold-strip .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+section { padding: 78px 0; }
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 35px;
+  margin-bottom: 35px;
+}
+h2 {
+  font: 400 clamp(36px, 5vw, 57px)/1.08 var(--serif);
+  margin: 12px 0 0;
+  letter-spacing: -1px;
+}
+.section-heading p {
+  max-width: 390px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: start;
+}
+.intro-copy {
+  color: #d8cdbf;
+  font-size: 13px;
+  line-height: 2.1;
+}
+.intro-copy p { margin-top: 0; }
+.quote {
+  margin-top: 25px;
+  padding: 23px;
+  background: #282019;
+  border-left: 3px solid var(--gold);
+  font: italic 23px/1.5 var(--serif);
+  color: var(--cream);
+}
+.quote small {
+  display: block;
+  margin-top: 15px;
+  color: var(--gold);
+  font: 9px var(--sans);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.principles {
+  border: 1px solid var(--line);
+  padding: 28px;
+  background: #1e1914;
+}
+.principles h3 {
+  font: 30px var(--serif);
+  margin: 10px 0 20px;
+}
+.principle {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.principle strong {
+  display: block;
+  font: 21px var(--serif);
+  margin-bottom: 7px;
+}
+.principle p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+  margin: 0;
+}
+.projects { background: #f5efe4; color: var(--dark); }
+.projects .section-heading p { color: #6e655a; }
+.projects .eyebrow { color: #8c6739; }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.project-card {
+  background: #fffaf1;
+  border: 1px solid #e0d2bd;
+  padding: 28px;
+  min-height: 260px;
+  position: relative;
+}
+.project-card .number {
+  color: #a7834f;
+  font: 35px var(--serif);
+}
+.project-card h3 {
+  font: 29px/1.2 var(--serif);
+  margin: 17px 0 12px;
+}
+.project-card p {
+  color: #655c51;
+  font-size: 12px;
+  line-height: 2;
+}
+.tag {
+  display: inline-block;
+  border: 1px solid #d7c4a6;
+  padding: 7px 10px;
+  margin: 8px 5px 0 0;
+  color: #76582f;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.notice {
+  margin-top: 22px;
+  padding: 18px 21px;
+  border-left: 3px solid #a7834f;
+  background: #eee2cf;
+  color: #5c5143;
+  font-size: 11px;
+  line-height: 1.9;
+}
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.step {
+  border-top: 1px solid var(--gold);
+  padding: 20px 5px 0 0;
+}
+.step span {
+  color: var(--gold);
+  font: 34px var(--serif);
+}
+.step h3 { font: 25px var(--serif); margin: 12px 0; }
+.step p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+.reflection {
+  background: #632d35;
+  border-top: 1px solid #a56c64;
+}
+.reflection-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 55px;
+}
+.reflection h2 { color: white; }
+.reflection .lead {
+  font: italic 24px/1.5 var(--serif);
+  color: #f0d7b1;
+}
+.reflection p {
+  color: #e5d4cb;
+  font-size: 12px;
+  line-height: 2.1;
+}
+.signature {
+  margin-top: 25px;
+  color: #f0d7b1;
+  font: italic 29px var(--serif);
+}
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.button:hover { background: #ead4ad; }
+footer {
+  background: #100e0c;
+  color: var(--muted);
+  padding: 25px 0;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+footer strong { color: var(--gold); font: 22px var(--serif); }
+@media(max-width:760px) {
+  .wrap { width: calc(100% - 32px); }
+  .navlinks a:not(.back) { display: none; }
+  .hero-inner { padding: 70px 0; }
+  .section-heading { align-items: start; flex-direction: column; gap: 5px; }
+  .intro-grid, .reflection-grid { grid-template-columns: 1fr; gap: 25px; }
+  .project-grid, .timeline { grid-template-columns: 1fr; }
+  section { padding: 55px 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>CPUT · Work Integrated Learning</span>
+    <span>Professional Development · 2026</span>
+  </div>
+</div>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="../index.html">Sylvia <span>Mahlangu</span></a>
+    <div class="navlinks">
+      <a href="#overview">Overview</a>
+      <a href="#projects">Focus Areas</a>
+      <a href="#journey">My Learning</a>
+      <a class="back" href="../index.html">← Portfolio</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Workplace Projects · Industry Experience</div>
+    <h1>Learning by<br><em>Doing.</em></h1>
+    <p>
+      My workplace experience at DENIS is helping me connect my ICT
+      Application Development studies with the realities of a professional
+      IT environment. This section documents my learning, developing
+      technical understanding and progress as I build confidence through
+      practical experience.
+    </p>
+    <div class="hero-meta">
+      <div class="meta">DENIS IT<small>Workplace placement</small></div>
+      <div class="meta">CPUT<small>ICT Application Development</small></div>
+      <div class="meta">Progress<small>Learning through experience</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-strip">
+  <div class="wrap">
+    <span>Observe</span><span>✦</span>
+    <span>Understand</span><span>✦</span>
+    <span>Practise</span><span>✦</span>
+    <span>Improve</span>
+  </div>
+</div>
+
+<section id="overview">
+  <div class="wrap">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">01 · Workplace overview</div>
+        <h2>Turning knowledge<br>into experience.</h2>
+      </div>
+      <p>
+        My placement gives me the opportunity to observe professional
+        practices, learn from experienced colleagues and gradually develop
+        my understanding of workplace technology.
+      </p>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-copy">
+        <p>
+          As an ICT Application Development student at CPUT, I want to
+          understand how the concepts I study relate to real working
+          environments. My placement in the DENIS IT Department is an
+          important opportunity to develop that understanding.
+        </p>
+        <p>
+          During my initial month, I took part in induction and training,
+          became familiar with workplace systems and learned more about
+          the environment in which the IT team operates. This helped me
+          appreciate that reliable technology depends on understanding
+          both the systems and the people who use them.
+        </p>
+        <p>
+          As I progressed, I began gradually assisting with system-related
+          issues. I am also continuing to learn about networking. These
+          experiences are helping me build my technical vocabulary,
+          ask better questions and recognise the importance of patience,
+          teamwork and following workplace procedures.
+        </p>
+        <div class="quote">
+          Every new experience is an opportunity to understand more than I
+          understood yesterday.
+          <small>Sylvia Mahlangu · Learning reflection</small>
+        </div>
+      </div>
+
+      <aside class="principles">
+        <div class="eyebrow">My professional approach</div>
+        <h3>How I learn at work.</h3>
+        <div class="principle">
+          <strong>01. Observe carefully</strong>
+          <p>Understand the environment, systems and procedures before attempting unfamiliar tasks.</p>
+        </div>
+        <div class="principle">
+          <strong>02. Ask and learn</strong>
+          <p>Seek clarification and guidance so that I can develop accurate understanding.</p>
+        </div>
+        <div class="principle">
+          <strong>03. Practise responsibly</strong>
+          <p>Build skills gradually while respecting workplace processes and responsibilities.</p>
+        </div>
+        <div class="principle">
+          <strong>04. Reflect and improve</strong>
+          <p>Use each experience to identify what I have learned and what I need to strengthen.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">02 · Areas of experience</div>
+        <h2>My workplace focus.</h2>
+      </div>
+      <p>
+        These focus areas describe the technical and professional knowledge
+        I am developing during my placement. They are learning areas,
+        not claims of completed independent projects.
+      </p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="number">01</div>
+        <h3>Workplace Systems</h3>
+        <p>
+          Learning how workplace systems support daily operations, becoming
+          familiar with established processes and developing an understanding
+          of how users interact with technology.
+        </p>
+        <span class="tag">Systems awareness</span>
+        <span class="tag">Workplace learning</span>
+      </article>
+
+      <article class="project-card">
+        <div class="number">02</div>
+        <h3>System Support</h3>
+        <p>
+          Gradually assisting with system-related issues under the
+          appropriate workplace guidance. This experience helps me develop
+          a careful approach to identifying problems and understanding
+          possible solutions.
+        </p>
+        <span class="tag">Problem-solving</span>
+        <span class="tag">Technical support</span>
+      </article>
+
+      <article class="project-card">
+        <div class="number">03</div>
+        <h3>Networking Knowledge</h3>
+        <p>
+          Continuing to build my understanding of networking concepts
+          and how connectivity supports communication between systems
+          and devices in a working environment.
+        </p>
+        <span class="tag">Networking</span>
+        <span class="tag">Continuous learning</span>
+      </article>
+
+      <article class="project-card">
+        <div class="number">04</div>
+        <h3>Professional Collaboration</h3>
+        <p>
+          Learning from colleagues and participating in workplace activities,
+          while developing communication, adaptability and an appreciation
+          for the responsibilities involved in professional IT work.
+        </p>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Professional growth</span>
+      </article>
+    </div>
+
+    <div class="notice">
+      <strong>Workplace confidentiality:</strong>
+      Some activities and projects are still being implemented. For that
+      reason, I describe my learning at an appropriate level and do not
+      publish confidential project names, internal information or
+      unauthorised screenshots.
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">03 · My development</div>
+        <h2>Progress, step by step.</h2>
+      </div>
+      <p>
+        My experience is an ongoing process. Each stage builds on what
+        I have already learned and prepares me for new responsibilities.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <article class="step">
+        <span>01</span>
+        <h3>Induction</h3>
+        <p>
+          My first month focused on induction, training and becoming
+          familiar with the workplace environment and systems.
+        </p>
+      </article>
+      <article class="step">
+        <span>02</span>
+        <h3>Participation</h3>
+        <p>
+          In my second month, I began gradually assisting with
+          system-related issues and learning through practical exposure.
+        </p>
+      </article>
+      <article class="step">
+        <span>03</span>
+        <h3>Continued learning</h3>
+        <p>
+          I continue to develop my networking knowledge, strengthen my
+          understanding of IT operations and learn from workplace experience.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reflection">
+  <div class="wrap reflection-grid">
+    <div>
+      <div class="eyebrow">04 · Reflection</div>
+      <h2>Building the professional I want to become.</h2>
+      <div class="signature">Sylvia Mahlangu</div>
+    </div>
+    <div>
+      <p class="lead">
+        I am learning that growth comes from being willing to listen,
+        practise, ask questions and keep improving.
+      </p>
+      <p>
+        My workplace experience is helping me see that IT involves more
+        than technical knowledge alone. It also requires responsibility,
+        communication, careful thinking and an understanding of the needs
+        of the people who depend on technology.
+      </p>
+      <p>
+        I want to keep developing my skills, gain more practical experience
+        and connect what I learn at CPUT with real workplace challenges.
+        I recognise that I am still learning, and I am committed to making
+        the most of the opportunities available to me.
+      </p>
+      <a class="button" href="../index.html">Return to my portfolio ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Sylvia Mahlangu</strong>
+    <span>CPUT · ICT APPLICATION DEVELOPMENT · 2026</span>
+    <a href="../index.html">BACK TO PORTFOLIO ↑</a>
+  </div>
+</footer>
+</body>
+</html>
