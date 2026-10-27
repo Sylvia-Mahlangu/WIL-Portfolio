@@ -4,672 +4,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#15120f">
 <title>My Story | Sylvia Mahlangu</title>
-
 <style>
-:root {
-  --black: #15120f;
-  --black-soft: #211b17;
-  --gold: #c5a16b;
-  --gold-light: #ead7b4;
-  --cream: #f7f1e6;
-  --paper: #fffaf1;
-  --brown: #805b36;
-  --muted: #81786c;
-  --line: #e4d8c5;
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: "Helvetica Neue", Arial, sans-serif;
+:root{
+  --ink:#171410;--dark:#211a15;--gold:#c5a16b;--pale:#e8d4ad;
+  --cream:#f5efe4;--paper:#fffaf1;--wine:#632d35;
+  --muted:#777065;--line:#dfd2bd;
+  --serif:"Bodoni MT",Didot,Georgia,"Times New Roman",serif;
+  --sans:"Helvetica Neue",Arial,sans-serif;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+.topline{background:var(--ink);color:var(--pale);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:12px 0}
+.topline .wrap{display:flex;justify-content:space-between;gap:15px}
+header{background:var(--ink);color:white;border-top:1px solid #493b2c}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.monogram{width:45px;height:45px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--pale);font:22px var(--serif)}
+.brand strong{font:21px var(--serif);display:block}
+.brand small{font-size:9px;letter-spacing:1.6px;color:#bdb1a1;text-transform:uppercase}
+.navlinks{display:flex;gap:20px;align-items:center}
+.navlinks a{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#e7ded2}
+.navlinks a:hover{color:var(--gold)}
+.navlinks .back{border:1px solid var(--gold);padding:10px 13px}
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--black);
-  font-family: var(--sans);
-  line-height: 1.75;
-}
-a { color: inherit; text-decoration: none; }
-a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
-.container { width: min(1200px, calc(100% - 48px)); margin: auto; }
+.hero{background:radial-gradient(ellipse at 80% 35%,#503329 0%,transparent 38%),linear-gradient(120deg,#171410,#2b2019 65%,#3c2920);color:white;position:relative;overflow:hidden}
+.hero:before{content:"S";position:absolute;right:3%;top:-150px;font:800 570px/1 var(--serif);color:#c5a16b0b}
+.hero:after{content:"";position:absolute;inset:15px;border:1px solid #c5a16b45;pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.12fr .88fr;gap:25px;align-items:center;padding:64px 0 70px;min-height:490px}
+.eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#a77f4c;font-weight:700}
+.hero .eyebrow{color:var(--pale)}
+.hero h1{font:400 clamp(57px,8vw,94px)/.91 var(--serif);letter-spacing:-3px;margin:24px 0}
+.hero h1 em{display:block;color:var(--pale);font-weight:400;padding-left:40px}
+.hero-intro{max-width:470px;font-size:12px;line-height:2;color:#d9cfc2}
+.hero-meta{display:flex;gap:28px;margin-top:27px}
+.hero-meta div{border-top:1px solid var(--gold);padding-top:10px;color:var(--pale);font:16px var(--serif)}
+.hero-meta span{display:block;color:#c4b8a7;font:9px var(--sans);letter-spacing:1.4px;text-transform:uppercase;margin-top:5px}
+.hero-art{width:100%;max-width:410px;justify-self:end}
+.hero-art svg{width:100%;display:block}
+.art-caption{text-align:center;color:var(--pale);font-size:9px;letter-spacing:3px;margin-top:-8px}
+.goldstrip{background:var(--gold);color:#201810;padding:12px 0;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.goldstrip .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 
-.topbar {
-  background: var(--black);
-  color: var(--gold-light);
-  padding: 11px 0;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.topbar-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-.header {
-  background: var(--black);
-  color: white;
-  border-top: 1px solid #45372b;
-  border-bottom: 1px solid #45372b;
-}
-.nav {
-  min-height: 78px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-}
-.monogram {
-  width: 43px;
-  height: 43px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
-  font: 21px var(--serif);
-}
-.brand strong {
-  display: block;
-  font: 19px var(--serif);
-}
-.brand small {
-  display: block;
-  color: #bdb2a2;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-.back-link {
-  color: var(--gold-light);
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.back-link:hover { color: white; }
+.section{padding:76px 0}
+.paper{background:var(--paper)}
+.dark{background:var(--ink);color:var(--cream)}
+.wine{background:var(--wine);color:white}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.sectionhead h2,.story-heading{font:400 clamp(37px,5vw,58px)/1.02 var(--serif);letter-spacing:-1.2px;margin:10px 0 0}
+.sectionhead p{max-width:350px;color:var(--muted);font-size:11px;line-height:1.9}
+.dark .sectionhead p,.wine .sectionhead p{color:#d0c4b8}
+.story-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:start}
+.story-copy{font-size:12px;line-height:2.05;color:#60594f}
+.story-copy p{margin:0 0 18px}
+.story-copy .drop:first-letter{float:left;font:63px/.8 var(--serif);color:var(--wine);padding:8px 9px 0 0}
+.pullquote{background:#eee2cf;border-left:3px solid var(--gold);padding:23px 25px;margin-top:26px}
+.pullquote blockquote{font:italic 24px/1.45 var(--serif);margin:0}
+.pullquote span{display:block;margin-top:13px;color:#87673e;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.timeline-panel{background:#f1e7d7;padding:29px 27px;border:1px solid #e5d5bd}
+.timeline-title{font:400 30px var(--serif);margin:7px 0 24px}
+.timeline{border-left:1px solid #c6a36d;padding-left:23px}
+.event{position:relative;padding-bottom:24px}
+.event:last-child{padding-bottom:0}
+.event:before{content:"";position:absolute;left:-29px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid #f1e7d7;box-shadow:0 0 0 1px var(--gold)}
+.event time{font-size:9px;text-transform:uppercase;letter-spacing:1.4px;color:#87633b;font-weight:bold}
+.event h3{font:400 21px var(--serif);margin:4px 0}
+.event p{font-size:10px;line-height:1.9;color:#71685d;margin:0}
 
-.hero {
-  position: relative;
-  overflow: hidden;
-  color: white;
-  background:
-    radial-gradient(ellipse at 78% 20%, rgba(197,161,107,.25), transparent 33%),
-    linear-gradient(120deg, #17130f, #302019 65%, #4a3020);
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(197,161,107,.28);
-  pointer-events: none;
-}
-.hero-grid {
-  position: relative;
-  z-index: 1;
-  min-height: 480px;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
-  gap: 45px;
-  padding-block: 65px;
-}
-.eyebrow {
-  color: var(--gold);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-.hero h1 {
-  margin: 23px 0;
-  font: 400 clamp(54px, 7.5vw, 94px)/.96 var(--serif);
-  letter-spacing: -3px;
-}
-.hero h1 em {
-  color: var(--gold-light);
-  font-weight: 400;
-}
-.hero-description {
-  max-width: 500px;
-  color: #ded4c7;
-  font-size: 12px;
-  line-height: 2;
-}
-.hero-note {
-  margin-top: 25px;
-  display: inline-block;
-  padding-top: 13px;
-  border-top: 1px solid var(--gold);
-  color: var(--gold-light);
-  font: italic 16px var(--serif);
-}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.value{padding:23px;background:linear-gradient(145deg,#29221b,#1c1814);border:1px solid #57432b;min-height:170px}
+.value .num{font:29px var(--serif);color:var(--gold)}
+.value h3{font:400 22px var(--serif);margin:9px 0}
+.value p{font-size:10px;line-height:1.9;color:#c8bfb3;margin:0}
+.growth{margin-top:22px;background:#30231b;border:1px solid #58452e;padding:25px;display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:25px}
+.growth svg{width:100%;max-height:190px}
+.growth h3{font:italic 31px/1.25 var(--serif);color:var(--pale);margin:7px 0 10px}
+.growth p{font-size:11px;line-height:2;color:#d2c4b4;margin:0}
 
-/* Original botanical illustration */
-.growth-art {
-  width: 100%;
-  max-width: 430px;
-  justify-self: end;
-}
-.growth-art svg { display: block; width: 100%; height: auto; }
+.reflection{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}
+.reflection h2{font:400 clamp(38px,5vw,57px)/1.05 var(--serif);margin:10px 0}
+.reflection .lead{font:italic 23px/1.5 var(--serif);color:var(--pale)}
+.reflection p{font-size:11px;line-height:2.1;color:#ddd0c1}
+.signature{font:italic 29px var(--serif);color:var(--pale);margin-top:25px}
+.facts{margin-top:25px;border-top:1px solid #c5a16b55}
+.fact{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid #c5a16b33;font-size:10px}
+.fact span:first-child{color:#bda991}
+.fact span:last-child{text-align:right;color:#fff5e5}
+.button{display:inline-block;margin-top:20px;padding:13px 17px;background:var(--gold);color:var(--ink);font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.button:hover{background:var(--pale)}
+footer{background:#100e0c;color:#c5b8a6;padding:23px 0;font-size:9px;letter-spacing:1px}
+footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+footer strong{color:var(--pale);font:18px var(--serif)}
 
-.section { padding-block: 78px; }
-.section-paper { background: var(--paper); }
-.section-dark { background: var(--black); color: var(--cream); }
-.section-heading { margin-bottom: 32px; }
-.section-heading h2 {
-  margin: 9px 0 0;
-  font: 400 clamp(34px, 5vw, 54px)/1.1 var(--serif);
-  letter-spacing: -1px;
+@media(max-width:780px){
+ .wrap{width:calc(100% - 32px)}
+ .nav{align-items:flex-start}
+ .navlinks{gap:10px;flex-wrap:wrap;justify-content:flex-end}
+ .navlinks a:not(.back){display:none}
+ .hero-grid,.story-layout,.reflection{grid-template-columns:1fr}
+ .hero-grid{padding:53px 0}
+ .hero-art{max-width:310px;justify-self:center}
+ .section{padding:55px 0}
+ .sectionhead{align-items:flex-start;flex-direction:column;gap:5px}
+ .growth{grid-template-columns:1fr}
+ .growth svg{max-width:270px;margin:auto}
 }
-.section-intro {
-  max-width: 690px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 2;
+@media(max-width:520px){
+ .hero h1{font-size:58px;letter-spacing:-1px}
+ .hero h1 em{padding-left:8px}
+ .hero-meta{gap:18px}
+ .values{grid-template-columns:1fr}
+ .timeline-panel{padding:23px 20px}
+ .goldstrip .wrap{justify-content:center}
 }
-.story-grid {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 50px;
-  align-items: start;
-}
-.story-copy p {
-  color: #625b51;
-  font-size: 13px;
-  line-height: 2.1;
-  margin: 0 0 20px;
-}
-.dropcap:first-letter {
-  float: left;
-  font: 62px/.8 var(--serif);
-  color: var(--brown);
-  padding: 7px 9px 0 0;
-}
-.quote-box {
-  margin-top: 30px;
-  padding: 25px;
-  background: #efe4d2;
-  border-left: 3px solid var(--gold);
-}
-.quote-box blockquote {
-  margin: 0;
-  font: italic 23px/1.5 var(--serif);
-}
-.quote-box p {
-  margin: 12px 0 0;
-  color: var(--brown);
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.timeline { border-left: 1px solid #c9ad80; padding-left: 25px; }
-.timeline-item {
-  position: relative;
-  padding: 0 0 29px;
-}
-.timeline-item:last-child { padding-bottom: 0; }
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -31px;
-  top: 6px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 3px solid var(--cream);
-  box-shadow: 0 0 0 1px var(--gold);
-}
-.timeline-label {
-  color: var(--brown);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-.timeline-item h3 {
-  margin: 5px 0;
-  font: 400 23px var(--serif);
-}
-.timeline-item p {
-  margin: 0;
-  color: #71695f;
-  font-size: 11px;
-  line-height: 1.9;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.skill {
-  padding: 22px 18px;
-  background: #f4ecdf;
-  border: 1px solid #e8dac5;
-}
-.skill-symbol {
-  color: var(--brown);
-  font: 27px var(--serif);
-}
-.skill h3 {
-  margin: 10px 0 5px;
-  font: 400 20px var(--serif);
-}
-.skill p {
-  margin: 0;
-  color: #746b5f;
-  font-size: 10px;
-  line-height: 1.9;
-}
-
-.growth-banner {
-  margin-top: 24px;
-  padding: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  align-items: center;
-  background: var(--black-soft);
-  color: white;
-}
-.growth-banner svg { width: 100%; max-height: 190px; }
-.growth-banner h3 {
-  margin: 0 0 12px;
-  color: var(--gold-light);
-  font: italic 30px/1.3 var(--serif);
-}
-.growth-banner p {
-  color: #d0c3b2;
-  font-size: 11px;
-  line-height: 2;
-}
-
-.closing {
-  padding-block: 75px;
-  background: #e9decc;
-}
-.closing-grid {
-  display: grid;
-  grid-template-columns: .75fr 1.25fr;
-  gap: 55px;
-  align-items: start;
-}
-.closing h2 {
-  margin: 10px 0;
-  font: 400 clamp(36px, 5vw, 57px)/1.1 var(--serif);
-}
-.closing p {
-  color: #655d53;
-  font-size: 12px;
-  line-height: 2.1;
-}
-.closing .signature {
-  margin-top: 22px;
-  color: var(--brown);
-  font: italic 26px var(--serif);
-}
-.facts {
-  margin-top: 25px;
-  border-top: 1px solid #d5c5ae;
-}
-.fact {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 12px 0;
-  border-bottom: 1px solid #d5c5ae;
-  font-size: 10px;
-}
-.fact span:first-child { color: #817362; }
-.fact span:last-child { text-align: right; color: var(--black); }
-
-.footer {
-  background: var(--black);
-  color: #c8bca9;
-  padding: 25px 0;
-  font-size: 9px;
-  letter-spacing: 1px;
-}
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-.footer strong { color: var(--gold-light); font-weight: 400; }
-
-@media (max-width: 760px) {
-  .container { width: calc(100% - 34px); }
-  .hero-grid, .story-grid, .closing-grid { grid-template-columns: 1fr; gap: 32px; }
-  .hero-grid { padding-block: 55px; }
-  .growth-art { max-width: 300px; justify-self: center; }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .growth-banner { grid-template-columns: 1fr; }
-  .growth-banner svg { max-width: 300px; justify-self: center; }
-  .section { padding-block: 55px; }
-}
-@media (max-width: 420px) {
-  .topbar-inner { flex-direction: column; gap: 4px; }
-  .hero h1 { letter-spacing: -1.5px; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .quote-box { padding: 20px; }
-}
-@media print {
-  .topbar, .header, .back-link { display: none; }
-  body { background: white; }
-  .hero, .section-dark, .growth-banner {
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
-
 <body>
 
-<div class="topbar">
-  <div class="container topbar-inner">
-    <span>CPUT · Work Integrated Learning</span>
-    <span>Personal story · 2026</span>
-  </div>
+<div class="topline">
+  <div class="wrap"><span>CPUT · Work Integrated Learning</span><span>Personal Portfolio · 2026</span></div>
 </div>
 
-<header class="header">
-  <div class="container nav">
+<header>
+  <nav class="wrap">
     <a href="../index.html" class="brand">
       <div class="monogram">SM</div>
-      <div>
-        <strong>Sylvia Mahlangu</strong>
-        <small>ICT · Application Development</small>
-      </div>
+      <div><strong>Sylvia Mahlangu</strong><small>ICT · Application Development</small></div>
     </a>
-    <a class="back-link" href="../index.html">← Back to Portfolio</a>
-  </div>
+    <div class="navlinks">
+      <a href="#my-story">My Story</a>
+      <a href="#journey">My Journey</a>
+      <a href="#growth">My Growth</a>
+      <a class="back" href="../index.html">← Portfolio</a>
+    </div>
+  </nav>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Industry placement · My story</div>
-        <h1>My Journey<br>at <em>DENIS.</em></h1>
-        <p class="hero-description">
-          My journey in technology is one of curiosity, dedication and
-          continuous growth. From studying ICT to gaining workplace experience
-          in the DENIS IT Department, every stage is helping me understand
-          not only how technology works, but how it can support people,
-          solve problems and make a difference.
-        </p>
-        <div class="hero-note">“Same determination. Bigger dreams.”</div>
-      </div>
-
-      <div class="growth-art">
-        <svg viewBox="0 0 430 430" role="img" aria-label="Illustration of a young plant growing from rich soil, symbolising learning and personal development">
-          <defs>
-            <linearGradient id="soil" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#8d633c"/>
-              <stop offset="1" stop-color="#33251a"/>
-            </linearGradient>
-            <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#c5b67a"/>
-              <stop offset="1" stop-color="#58714a"/>
-            </linearGradient>
-          </defs>
-          <circle cx="220" cy="205" r="166" fill="#c5a16b" opacity=".06"/>
-          <circle cx="220" cy="205" r="133" fill="none" stroke="#c5a16b" stroke-opacity=".25"/>
-          <circle cx="220" cy="205" r="105" fill="none" stroke="#c5a16b" stroke-opacity=".18"/>
-          <path d="M55 330 Q130 304 220 325 T375 322 L375 375 L55 375Z" fill="url(#soil)"/>
-          <path d="M55 330 Q130 304 220 325 T375 322" fill="none" stroke="#c5a16b" stroke-width="2"/>
-          <path d="M218 327 C220 280 214 237 220 190 C223 166 233 150 246 134" fill="none" stroke="#b5ad70" stroke-width="6" stroke-linecap="round"/>
-          <path d="M220 259 C182 250 157 220 163 187 C196 195 219 218 220 259Z" fill="url(#leaf)"/>
-          <path d="M220 259 C194 227 182 211 163 187" fill="none" stroke="#e2d3a1" stroke-width="1.5"/>
-          <path d="M224 215 C227 175 255 145 293 145 C288 183 261 210 224 215Z" fill="url(#leaf)"/>
-          <path d="M224 215 C247 187 268 162 293 145" fill="none" stroke="#e2d3a1" stroke-width="1.5"/>
-          <path d="M244 160 C223 143 218 116 234 93 C258 113 263 137 244 160Z" fill="#8f9a5e"/>
-          <path d="M244 160 L234 93" fill="none" stroke="#e2d3a1" stroke-width="1.5"/>
-          <path d="M205 327 C198 340 192 350 185 359 M221 327 C229 340 237 349 244 359 M211 328 L210 365" fill="none" stroke="#c4a16c" stroke-width="2" stroke-linecap="round"/>
-          <g fill="#c5a16b" opacity=".75">
-            <circle cx="137" cy="310" r="2"/><circle cx="155" cy="337" r="2.5"/>
-            <circle cx="293" cy="314" r="2"/><circle cx="319" cy="337" r="3"/>
-            <circle cx="275" cy="346" r="1.8"/><circle cx="120" cy="348" r="1.8"/>
-          </g>
-          <text x="220" y="405" text-anchor="middle" fill="#ead7b4" font-family="Georgia,serif" font-size="12" letter-spacing="4">GROW · LEARN · BECOME</text>
-        </svg>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">A personal story of purpose and progress</div>
+      <h1>Becoming<br><em>My Best.</em></h1>
+      <p class="hero-intro">
+        My journey into technology is built on dedication, curiosity and the
+        courage to keep learning. From my first ICT qualification to my current
+        workplace experience at DENIS, every chapter is helping me grow into
+        the professional I aspire to become.
+      </p>
+      <div class="hero-meta">
+        <div>My story<span>Learning in progress</span></div>
+        <div>My purpose<span>Growth through experience</span></div>
       </div>
     </div>
-  </section>
+    <div class="hero-art">
+      <svg viewBox="0 0 390 400" role="img" aria-label="An elegant golden botanical illustration of a growing plant, symbolising personal growth">
+        <defs>
+          <linearGradient id="leafGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e4d0a1"/><stop offset="1" stop-color="#657650"/>
+          </linearGradient>
+          <linearGradient id="soilGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ac8051"/><stop offset="1" stop-color="#38251b"/>
+          </linearGradient>
+        </defs>
+        <circle cx="196" cy="184" r="150" fill="#c5a16b" opacity=".05"/>
+        <circle cx="196" cy="184" r="133" fill="none" stroke="#c5a16b" stroke-opacity=".4"/>
+        <circle cx="196" cy="184" r="105" fill="none" stroke="#c5a16b" stroke-opacity=".2"/>
+        <path d="M48 307 Q118 283 196 301 T342 298 L342 345 L48 345Z" fill="url(#soilGold)"/>
+        <path d="M48 307 Q118 283 196 301 T342 298" fill="none" stroke="#d7b47b" stroke-width="2"/>
+        <path d="M195 302 C194 260 193 218 205 172 C209 150 222 130 242 112" fill="none" stroke="#c0b57b" stroke-width="5" stroke-linecap="round"/>
+        <path d="M197 249 C160 246 134 217 141 184 C175 193 197 216 197 249Z" fill="url(#leafGold)"/>
+        <path d="M197 249 L141 184" stroke="#f0dfb5" fill="none" stroke-width="1.5"/>
+        <path d="M200 215 C204 178 232 150 269 153 C263 188 238 213 200 215Z" fill="url(#leafGold)"/>
+        <path d="M200 215 L269 153" stroke="#f0dfb5" fill="none" stroke-width="1.5"/>
+        <path d="M225 145 C202 126 200 99 218 78 C243 98 248 124 225 145Z" fill="#b7b77b"/>
+        <path d="M225 145 L218 78" stroke="#f0dfb5" fill="none" stroke-width="1.5"/>
+        <path d="M196 302 L174 330 M199 302 L222 330 M194 302 L194 334" stroke="#c5a16b" stroke-width="2" fill="none"/>
+        <g fill="#d1b078"><circle cx="111" cy="296" r="2"/><circle cx="128" cy="317" r="3"/><circle cx="281" cy="310" r="2"/><circle cx="300" cy="292" r="2.5"/><circle cx="254" cy="326" r="2"/></g>
+        <text x="195" y="376" text-anchor="middle" font-family="Georgia,serif" font-size="11" letter-spacing="3" fill="#ead4a8">GROW THROUGH EVERY SEASON</text>
+      </svg>
+      <div class="art-caption">A JOURNEY OF BECOMING</div>
+    </div>
+  </div>
+</section>
 
-  <section class="section section-paper">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Chapter one · My story</div>
-        <h2>More than a qualification.</h2>
-        <p class="section-intro">
-          My path into technology is a story of building knowledge, exploring
-          new opportunities and staying committed to my personal development.
-        </p>
-      </div>
+<div class="goldstrip"><div class="wrap"><span>Curiosity</span><span>✦</span><span>Dedication</span><span>✦</span><span>Learning</span><span>✦</span><span>Progress</span></div></div>
 
-      <div class="story-grid">
-        <div class="story-copy">
-          <p class="dropcap">
-            My interest in technology has grown into a serious commitment to
-            learning, problem-solving and building a future in Information
-            Technology. I began my formal ICT journey by completing a Higher
-            Certificate in ICT in 2022. That achievement gave me a foundation
-            to keep moving forward and to explore the wider opportunities
-            available in the technology field.
-          </p>
-          <p>
-            I continued investing in my development through a Data Analytics
-            short course on Coursera and an online English teaching
-            certificate. These learning experiences have helped me appreciate
-            the value of developing different skills, remaining open to new
-            knowledge and challenging myself to grow beyond what I already know.
-          </p>
-          <p>
-            My experience working as a CCA in the dental department has also
-            been part of my professional journey. It has given me experience
-            in a workplace environment and helped me appreciate the importance
-            of responsibility, communication, supporting others and learning
-            how different roles contribute to a bigger service.
-          </p>
-          <p>
-            Today, as an ICT Application Development student at CPUT and an
-            intern in the DENIS IT Department, I am continuing to bring my
-            academic learning closer to real workplace practice. I am learning
-            about workplace systems, becoming more familiar with technical
-            support, assisting with system-related issues and developing my
-            understanding of networking.
-          </p>
-          <p>
-            I am still learning, and I do not expect myself to know everything
-            immediately. What matters to me is that I keep asking questions,
-            improving my understanding, taking guidance seriously and making
-            the most of the opportunities I receive.
-          </p>
+<section class="section paper" id="my-story">
+  <div class="wrap">
+    <div class="sectionhead">
+      <div><div class="eyebrow">01 · The story behind the student</div><h2>More than a qualification.</h2></div>
+      <p>My journey is about the knowledge I have gained, the experiences that have shaped me and the future I continue working towards.</p>
+    </div>
+    <div class="story-layout">
+      <article class="story-copy">
+        <p class="drop">My journey in technology is a story of growth, determination and choosing to keep moving forward. Completing my Higher Certificate in ICT in 2022 was an important milestone. It gave me a foundation to continue learning and to pursue my interest in the world of Information and Communication Technology.</p>
+        <p>I have continued investing in myself beyond my formal studies. Through a Data Analytics short course on Coursera, I explored another area of technology, while my online English teaching certificate gave me another opportunity to develop my skills. These experiences remind me that learning does not have to happen in only one way. Every new skill can contribute to the person and professional I am becoming.</p>
+        <p>My workplace experience as a CCA in the dental department has also been part of my development. Working in a professional environment has helped me appreciate responsibility, communication, teamwork and the importance of supporting the people who rely on a service. These lessons matter in technology too, because IT is not only about computers; it is also about the people who use them.</p>
+        <p>As an ICT Application Development student at CPUT, I am now bringing my studies closer to real workplace experience through my placement in the DENIS IT Department. During my first month, I received induction and training and began learning how workplace systems operate. In my second month, I started gradually assisting with system-related issues. I am also continuing to develop my understanding of networking.</p>
+        <p>I know that I still have much to learn, and I see that as part of the journey rather than a weakness. I want to understand the reasons behind technical problems, learn from experienced people, improve through practice and become more confident in what I do. My goal is to make every opportunity count and to keep building the knowledge I will need for my future career.</p>
+        <div class="pullquote">
+          <blockquote>“I may still be growing, but I am no longer standing where I started.”</blockquote>
+          <span>Sylvia Mahlangu · My personal reflection</span>
+        </div>
+      </article>
 
-          <div class="quote-box">
-            <blockquote>
-              “I am proud of how far I have come, but even more excited about
-              what I can still learn and become.”
-            </blockquote>
-            <p>Sylvia Mahlangu · Personal reflection</p>
+      <aside class="timeline-panel" id="journey">
+        <div class="eyebrow">02 · The milestones</div>
+        <h3 class="timeline-title">Every chapter matters.</h3>
+        <div class="timeline">
+          <div class="event">
+            <time>2022 · My foundation</time>
+            <h3>Higher Certificate in ICT</h3>
+            <p>Completed my Higher Certificate in ICT and established a foundation for further learning in technology.</p>
+          </div>
+          <div class="event">
+            <time>Continuous development</time>
+            <h3>Expanding my knowledge</h3>
+            <p>Explored Data Analytics through Coursera and completed an online English teaching certificate.</p>
+          </div>
+          <div class="event">
+            <time>Workplace experience</time>
+            <h3>Learning through responsibility</h3>
+            <p>Gained experience as a CCA in the dental department and developed my understanding of professional work.</p>
+          </div>
+          <div class="event">
+            <time>2026 · My current chapter</time>
+            <h3>CPUT and DENIS IT</h3>
+            <p>Continue my ICT Application Development studies while learning workplace systems, assisting with system issues and developing networking knowledge.</p>
+          </div>
+          <div class="event">
+            <time>The future</time>
+            <h3>Building confidence through practice</h3>
+            <p>Continue strengthening my technical abilities, problem-solving and professional experience.</p>
           </div>
         </div>
-
-        <div>
-          <div class="section-heading">
-            <div class="eyebrow">The timeline</div>
-            <h2 style="font-size:35px">The journey so far.</h2>
-          </div>
-
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-label">2022 · Foundation</div>
-              <h3>Higher Certificate in ICT</h3>
-              <p>
-                Completed my Higher Certificate in ICT and established a
-                foundation for continuing my journey in technology.
-              </p>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-label">Continuous learning</div>
-              <h3>Expanding my skills</h3>
-              <p>
-                Added learning experiences in Data Analytics through Coursera
-                and online English teaching, broadening my knowledge and skills.
-              </p>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-label">Workplace experience</div>
-              <h3>Learning in the dental environment</h3>
-              <p>
-                Gained workplace experience as a CCA in the dental department,
-                developing my appreciation for responsibility and communication.
-              </p>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-label">Current chapter · 2026</div>
-              <h3>CPUT and DENIS IT</h3>
-              <p>
-                Continuing my ICT Application Development studies while
-                learning about workplace systems, system-related issues
-                and networking during my IT placement.
-              </p>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-label">Looking ahead</div>
-              <h3>Keep learning. Keep growing.</h3>
-              <p>
-                Build practical experience, strengthen my technical abilities
-                and continue developing towards a career in technology.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </aside>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Chapter two · Personal development</div>
-        <h2>What this journey is teaching me.</h2>
-        <p class="section-intro">
-          Technology is not only about writing code. It also involves
-          understanding people, solving problems, adapting and taking
-          responsibility for continuous learning.
-        </p>
-      </div>
-
-      <div class="skills-grid">
-        <article class="skill">
-          <div class="skill-symbol">01</div>
-          <h3>Technical growth</h3>
-          <p>Building my understanding of ICT concepts, workplace systems and networking.</p>
-        </article>
-        <article class="skill">
-          <div class="skill-symbol">02</div>
-          <h3>Problem-solving</h3>
-          <p>Learning to approach system-related issues carefully and seek guidance when needed.</p>
-        </article>
-        <article class="skill">
-          <div class="skill-symbol">03</div>
-          <h3>Communication</h3>
-          <p>Recognising the importance of listening, asking questions and working respectfully with others.</p>
-        </article>
-        <article class="skill">
-          <div class="skill-symbol">04</div>
-          <h3>Adaptability</h3>
-          <p>Becoming familiar with new systems, procedures and workplace expectations.</p>
-        </article>
-        <article class="skill">
-          <div class="skill-symbol">05</div>
-          <h3>Dedication</h3>
-          <p>Continuing to study, learn and improve while making use of the opportunities available to me.</p>
-        </article>
-        <article class="skill">
-          <div class="skill-symbol">06</div>
-          <h3>Professional growth</h3>
-          <p>Learning to approach responsibilities with care, patience and a willingness to improve.</p>
-        </article>
-      </div>
-
-      <div class="growth-banner">
-        <svg viewBox="0 0 300 190" role="img" aria-label="A small green seedling growing from soil">
-          <circle cx="150" cy="86" r="73" fill="#c5a16b" opacity=".08"/>
-          <path d="M30 145 Q95 129 150 143 T270 142 L270 172 L30 172Z" fill="#61452c"/>
-          <path d="M30 145 Q95 129 150 143 T270 142" fill="none" stroke="#c5a16b" stroke-width="2"/>
-          <path d="M150 143 C150 110 147 80 155 48" fill="none" stroke="#9aa36b" stroke-width="5" stroke-linecap="round"/>
-          <path d="M151 110 C120 108 101 89 106 65 C134 73 150 88 151 110Z" fill="#8d9b5c"/>
-          <path d="M151 110 L106 65" stroke="#d5d2a1" stroke-width="1.5" fill="none"/>
-          <path d="M154 81 C157 52 180 35 204 38 C199 63 179 80 154 81Z" fill="#b6b77b"/>
-          <path d="M154 81 L204 38" stroke="#e4d7ac" stroke-width="1.5" fill="none"/>
-          <path d="M144 144 L132 160 M154 144 L168 160 M150 144 L150 163" stroke="#c5a16b" stroke-width="2" fill="none"/>
-        </svg>
-        <div>
-          <div class="eyebrow">A reminder to myself</div>
-          <h3>The best is still ahead.</h3>
-          <p>
-            Growth takes time. Every new skill, question, challenge and lesson
-            can become part of a stronger foundation for the future I am working
-            towards.
-          </p>
-        </div>
-      </div>
+<section class="section dark" id="growth">
+  <div class="wrap">
+    <div class="sectionhead">
+      <div><div class="eyebrow">03 · The person I am becoming</div><h2>Growth in every direction.</h2></div>
+      <p>Every new challenge is an opportunity to become more knowledgeable, more capable and more confident.</p>
     </div>
-  </section>
-
-  <section class="closing">
-    <div class="container closing-grid">
-      <div>
-        <div class="eyebrow">The next chapter</div>
-        <h2>My story is still being written.</h2>
-        <div class="signature">Sylvia Mahlangu</div>
-      </div>
-      <div>
-        <p>
-          I see my journey as an ongoing process of learning and becoming.
-          I am grateful for the education, work experience and opportunities
-          that have brought me to this stage, and I know there is still much
-          more for me to discover.
-        </p>
-        <p>
-          My goal is to keep developing my technical knowledge, gain meaningful
-          experience, contribute positively wherever I work and build a future
-          in which I can use technology to solve problems and support others.
-          I want to look back on this chapter knowing that I remained dedicated,
-          made the most of my opportunities and kept moving forward.
-        </p>
-
-        <div class="facts">
-          <div class="fact"><span>Student</span><span>Sylvia Mahlangu</span></div>
-          <div class="fact"><span>Institution</span><span>Cape Peninsula University of Technology</span></div>
-          <div class="fact"><span>Study area</span><span>ICT · Application Development</span></div>
-          <div class="fact"><span>Placement</span><span>DENIS · IT Department</span></div>
-          <div class="fact"><span>Portfolio year</span><span>2026</span></div>
-        </div>
-      </div>
+    <div class="values">
+      <article class="value"><div class="num">01</div><h3>Technical curiosity</h3><p>Developing my understanding of workplace systems, networking and the technology that supports daily operations.</p></article>
+      <article class="value"><div class="num">02</div><h3>Problem-solving</h3><p>Learning to approach system-related issues carefully, understand what is happening and ask for guidance when necessary.</p></article>
+      <article class="value"><div class="num">03</div><h3>Dedication</h3><p>Continuing to invest in my education and making use of the opportunities available to me.</p></article>
+      <article class="value"><div class="num">04</div><h3>Communication</h3><p>Recognising that listening, asking clear questions and working respectfully with others are essential workplace skills.</p></article>
+      <article class="value"><div class="num">05</div><h3>Adaptability</h3><p>Becoming more comfortable with new environments, procedures and technical concepts as I learn.</p></article>
+      <article class="value"><div class="num">06</div><h3>Professional growth</h3><p>Building good habits around responsibility, patience, continuous improvement and learning from experience.</p></article>
     </div>
-  </section>
+    <div class="growth">
+      <svg viewBox="0 0 300 190" role="img" aria-label="A green seedling growing from the soil">
+        <circle cx="150" cy="85" r="72" fill="#c5a16b" opacity=".08"/>
+        <path d="M30 143 Q90 128 150 141 T270 140 L270 170 L30 170Z" fill="#67482c"/>
+        <path d="M30 143 Q90 128 150 141 T270 140" stroke="#c5a16b" stroke-width="2" fill="none"/>
+        <path d="M150 141 C150 108 148 78 156 47" stroke="#aab17a" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M151 109 C120 106 100 87 106 64 C134 72 150 87 151 109Z" fill="#8e9c63"/>
+        <path d="M151 109 L106 64" stroke="#ded6a5" fill="none"/>
+        <path d="M155 81 C158 52 181 35 204 38 C199 62 180 79 155 81Z" fill="#c1bb83"/>
+        <path d="M155 81 L204 38" stroke="#e9dfb9" fill="none"/>
+        <path d="M144 142 L132 159 M154 142 L168 159 M150 142 L150 161" stroke="#c5a16b" stroke-width="2" fill="none"/>
+      </svg>
+      <div><div class="eyebrow">A note to my future self</div><h3>The best is still ahead.</h3><p>I do not need to know everything today. I need to remain willing to learn, to practise, to accept guidance and to keep improving. Each experience is another part of the foundation I am building for my future.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section wine">
+  <div class="wrap reflection">
+    <div><div class="eyebrow" style="color:var(--pale)">04 · Looking forward</div><h2>My story is still being written.</h2><div class="signature">Sylvia Mahlangu</div></div>
+    <div>
+      <p class="lead">I am proud of the progress I have made, and I am committed to the work still ahead of me.</p>
+      <p>My journey has taught me that progress is not always a dramatic leap. Sometimes it is a new concept understood, a problem approached with more confidence, a question asked or a lesson learned from someone with more experience. These moments are important because they gradually build the professional I want to become.</p>
+      <p>As I continue my studies and my WIL placement, I want to strengthen my technical knowledge, gain meaningful practical experience and contribute positively wherever I work. I want to approach my career with curiosity, discipline and the confidence to keep learning even when something is new or challenging.</p>
+      <p>This portfolio represents a chapter in that process. It is a record of where I am now, what I am learning and the direction in which I hope to grow.</p>
+      <div class="facts">
+        <div class="fact"><span>Student</span><span>Sylvia Mahlangu</span></div>
+        <div class="fact"><span>Institution</span><span>Cape Peninsula University of Technology</span></div>
+        <div class="fact"><span>Qualification pathway</span><span>ICT · Application Development</span></div>
+        <div class="fact"><span>Industry placement</span><span>DENIS · IT Department</span></div>
+        <div class="fact"><span>Portfolio edition</span><span>2026</span></div>
+      </div>
+      <a class="button" href="../index.html">Return to my portfolio ↗</a>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer>
-  <div class="container footer-inner">
-    <span><strong>Sylvia Mahlangu</strong> · Personal WIL Portfolio</span>
-    <span>CPUT · ICT Application Development · 2026</span>
-    <a href="../index.html">← Return to portfolio</a>
-  </div>
-</footer>
-
+<footer><div class="wrap"><strong>Sylvia Mahlangu</strong><span>CPUT · ICT APPLICATION DEVELOPMENT · 2026</span><a href="../index.html">BACK TO THE PORTFOLIO ↑</a></div></footer>
 </body>
 </html>
