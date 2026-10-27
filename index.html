@@ -1,1045 +1,1058 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My WIL Portfolio | DENIS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#173c32">
+<meta name="description" content="Sylvia Mahlangu's Work Integrated Learning portfolio, documenting her ICT studies, DENIS placement, projects and professional development.">
+<title>Sylvia Mahlangu | WIL Portfolio</title>
+
 <style>
-  :root{
-    --ink:#0c1220; --navy:#0b1626; --navy2:#12223a;
-    --gold:#b8924a; --gold-light:#d9bf8a; --champagne:#efe4cc;
-    --ivory:#faf8f4; --paper:#ffffff; --stone:#6b7280; --text:#1c2433; --line:#e7e0d1;
-    --side:290px;
-    --serif:'Cormorant Garamond',Georgia,serif;
-    --sans:'Jost',system-ui,sans-serif;
+:root {
+  --forest: #173c32;
+  --forest-dark: #102a23;
+  --forest-light: #315c4c;
+  --gold: #b3945d;
+  --gold-light: #e2d2ad;
+  --cream: #f7f5ef;
+  --paper: #fffefa;
+  --ink: #252b27;
+  --muted: #777c74;
+  --line: #e5e1d6;
+  --white: #ffffff;
+  --shadow: 0 16px 40px rgba(25, 48, 37, .08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+img { max-width: 100%; }
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -1.4px;
+}
+
+.topline {
+  background: var(--forest-dark);
+  color: #e7e4d9;
+  text-align: center;
+  padding: 9px 16px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+  min-height: 91px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-mark {
+  width: 43px;
+  height: 43px;
+  border: 1px solid var(--gold);
+  display: grid;
+  place-items: center;
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-size: 21px;
+}
+
+.brand-title {
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.nav-links a {
+  color: #525950;
+  font-size: 12px;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--forest);
+  color: white !important;
+  padding: 12px 17px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(179,148,93,.17), transparent 38%),
+    linear-gradient(125deg, #173c32 0%, #102a23 75%);
+  color: white;
+}
+
+.hero::after {
+  content: "S";
+  position: absolute;
+  right: -18px;
+  bottom: -200px;
+  color: rgba(255,255,255,.035);
+  font-family: Georgia, serif;
+  font-size: 620px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding-block: 92px 84px;
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.hero .eyebrow { color: var(--gold-light); }
+
+.hero h1 {
+  margin: 23px 0 22px;
+  max-width: 760px;
+  font-size: clamp(44px, 6.2vw, 79px);
+  line-height: 1.04;
+  font-weight: 400;
+}
+
+.hero h1 em {
+  color: var(--gold-light);
+  font-weight: 400;
+}
+
+.hero-description {
+  max-width: 560px;
+  color: #d3ddd5;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 19px;
+  border: 1px solid transparent;
+  font-size: 11px;
+  letter-spacing: .5px;
+  transition: .2s ease;
+}
+
+.button-gold {
+  background: var(--gold);
+  color: var(--forest-dark);
+}
+
+.button-gold:hover { background: var(--gold-light); }
+
+.button-outline {
+  color: white;
+  border-color: rgba(255,255,255,.35);
+}
+
+.button-outline:hover { background: rgba(255,255,255,.08); }
+
+.hero-aside {
+  border-left: 1px solid rgba(226,210,173,.45);
+  padding: 17px 0 17px 28px;
+}
+
+.hero-aside-label {
+  color: var(--gold-light);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-aside h2 {
+  margin: 14px 0;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.hero-aside p {
+  color: #cbd7ce;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.hero-index {
+  margin-top: 28px;
+  color: var(--gold-light);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.meta-strip {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.meta-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.meta-item {
+  padding: 23px 25px;
+  border-right: 1px solid var(--line);
+}
+
+.meta-item:first-child { padding-left: 0; }
+.meta-item:last-child { border-right: 0; }
+
+.meta-label {
+  color: var(--muted);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+}
+
+.meta-value {
+  margin-top: 5px;
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+.section { padding-block: 86px; }
+
+.section-white { background: var(--paper); }
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  margin: 8px 0 0;
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.section-heading p {
+  max-width: 420px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+.editorial-panel {
+  background: var(--forest);
+  color: white;
+  padding: 36px;
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.editorial-panel .number {
+  color: var(--gold-light);
+  font-family: Georgia, serif;
+  font-size: 47px;
+}
+
+.editorial-panel h3 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 16px 0;
+}
+
+.editorial-panel p {
+  color: #d1dbd2;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.intro-copy { padding: 13px 0; }
+
+.intro-copy h3 {
+  margin: 8px 0 15px;
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.intro-copy p {
+  color: #646b63;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.fact-list {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.fact {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+}
+
+.fact span:first-child { color: var(--muted); }
+.fact span:last-child { color: var(--forest); text-align: right; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid var(--line);
+  min-height: 275px;
+  padding: 25px;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--gold-light);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-number {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+
+.card-symbol {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--forest);
+  font-size: 16px;
+}
+
+.card-category {
+  margin-top: 25px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.project-card h3 {
+  margin: 9px 0 11px;
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+  margin: 0 0 22px;
+}
+
+.card-link {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-link span {
+  color: var(--gold);
+  font-size: 17px;
+  transition: transform .2s;
+}
+
+.project-card:hover .card-link span { transform: translateX(5px); }
+
+.subsection-title {
+  margin: 48px 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.subsection-title::after {
+  content: "";
+  height: 1px;
+  background: var(--line);
+  flex: 1;
+}
+
+.reflection {
+  background: #eee9dc;
+  padding-block: 80px;
+}
+
+.reflection-inner {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.reflection-heading h2 {
+  margin: 12px 0;
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 4vw, 50px);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+.reflection-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.reflection-content {
+  border-left: 2px solid var(--gold);
+  padding-left: 30px;
+}
+
+.reflection-content p {
+  color: #525b52;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.quote {
+  color: var(--forest);
+  font-family: Georgia, serif;
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.contact-panel {
+  background: var(--forest);
+  color: white;
+  padding: 42px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.contact-panel h2 {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.contact-panel p {
+  color: #d1dbd2;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.contact-facts {
+  border-left: 1px solid rgba(255,255,255,.2);
+  padding-left: 28px;
+}
+
+.contact-fact { margin-bottom: 16px; }
+
+.contact-fact span {
+  display: block;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 9px;
+}
+
+.contact-fact strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.footer {
+  padding: 27px 0;
+  background: var(--forest-dark);
+  color: #d0d8d0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 10px;
+}
+
+.footer-mark {
+  color: var(--gold-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 850px) {
+  .nav-links { gap: 14px; }
+  .hero-inner { gap: 35px; }
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section-heading { align-items: start; flex-direction: column; }
+  .reflection-inner { gap: 30px; }
+}
+
+@media (max-width: 620px) {
+  .container { width: min(100% - 30px, 1180px); }
+  .navbar { padding-block: 17px; align-items: flex-start; flex-direction: column; }
+  .nav-links { width: 100%; gap: 17px; flex-wrap: wrap; }
+  .nav-links a { font-size: 11px; }
+  .nav-cta { padding: 7px 10px; }
+  .hero-inner { grid-template-columns: 1fr; padding-block: 62px; gap: 34px; }
+  .hero h1 { font-size: clamp(42px, 12vw, 60px); }
+  .hero-aside { max-width: 400px; }
+  .meta-inner { grid-template-columns: 1fr; }
+  .meta-item, .meta-item:first-child {
+    padding: 16px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:20px}
-  body{font-family:var(--sans);background:var(--ivory);color:var(--text);line-height:1.75;font-weight:400}
-  a{text-decoration:none;color:inherit}
-
-  /* ================= SIDEBAR ================= */
-  .sidebar{position:fixed;inset:0 auto 0 0;width:var(--side);background:linear-gradient(180deg,#070d18 0%,var(--navy2) 100%);
-    color:#fff;padding:44px 28px 30px;display:flex;flex-direction:column;z-index:50;overflow-y:auto;transition:transform .3s;
-    border-right:1px solid rgba(184,146,74,.35)}
-  .brand small{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light)}
-  .brand h1{font-family:var(--serif);font-size:2.2rem;font-weight:600;line-height:1.1;margin:8px 0 12px}
-  .brand p{font-size:.82rem;font-weight:300;color:#aab6c8;letter-spacing:.03em}
-  .rule{width:46px;height:1px;background:var(--gold);margin:26px 0}
-  .nav{display:flex;flex-direction:column;gap:2px}
-  .nav a{display:flex;align-items:baseline;gap:14px;padding:13px 14px;font-size:.9rem;letter-spacing:.06em;
-    color:#b9c4d6;border-left:2px solid transparent;transition:.25s}
-  .nav a span{font-family:var(--serif);font-size:.95rem;color:var(--gold);width:22px}
-  .nav a:hover{color:#fff;background:rgba(255,255,255,.04)}
-  .nav a.active{color:#fff;border-left-color:var(--gold);background:linear-gradient(90deg,rgba(184,146,74,.16),transparent)}
-  .side-foot{margin-top:auto;padding-top:34px}
-  .side-foot blockquote{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.4;color:var(--champagne);margin-bottom:18px}
-  .side-foot hr{border:0;border-top:1px solid rgba(255,255,255,.14);margin-bottom:14px}
-  .side-foot small{font-size:.72rem;color:#8f9db3;letter-spacing:.05em;line-height:1.6;display:block}
-  .menu-btn{display:none;position:fixed;top:14px;left:14px;z-index:60;background:var(--navy);color:var(--gold-light);border:1px solid var(--gold);
-    width:46px;height:46px;font-size:1.2rem;cursor:pointer}
-
-  /* ================= MAIN / HOME ================= */
-  main{margin-left:var(--side);padding:0 56px 50px}
-  .hsec{padding-top:84px}
-
-  .hero{margin-top:40px;position:relative;overflow:hidden;color:#fff;padding:70px 64px;
-    background:radial-gradient(circle at 85% 20%,rgba(184,146,74,.28),transparent 45%),linear-gradient(135deg,#070d18 0%,#10233f 100%);
-    display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center;border:1px solid rgba(184,146,74,.4)}
-  .hero::after{content:"";position:absolute;inset:14px;border:1px solid rgba(184,146,74,.25);pointer-events:none}
-  .eyebrow{display:flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-bottom:22px}
-  .eyebrow::before{content:"";width:40px;height:1px;background:var(--gold)}
-  .hero h2{font-family:var(--serif);font-size:clamp(2.4rem,4.8vw,4rem);font-weight:600;line-height:1.08;margin-bottom:14px}
-  .hero h2 em{font-style:italic;color:var(--gold-light);font-weight:500}
-  .hero h3{font-weight:300;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;color:#cfd8e6;margin-bottom:20px}
-  .hero p{max-width:560px;font-weight:300;color:#d4dcea}
-  .btns{display:flex;flex-wrap:wrap;gap:16px;margin-top:34px}
-  .btn{padding:14px 32px;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;transition:.3s;display:inline-block}
-  .btn.gold{background:var(--gold);color:#101725}
-  .btn.gold:hover{background:var(--gold-light)}
-  .btn.line{border:1px solid var(--gold-light);color:var(--gold-light)}
-  .btn.line:hover{background:rgba(217,191,138,.12)}
-  .portrait{justify-self:center;width:240px;height:240px;border-radius:50%;padding:8px;border:1px solid var(--gold);position:relative;z-index:1}
-  .portrait .photo{width:100%;height:100%;border-radius:50%;background:linear-gradient(145deg,#1a3358,#0b1626);
-    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:4.4rem;color:var(--gold-light);overflow:hidden}
-  .portrait .photo img{width:100%;height:100%;object-fit:cover}
-
-  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));background:var(--paper);border:1px solid var(--line);margin-top:30px}
-  .fact{padding:26px 28px;border-right:1px solid var(--line)}
-  .fact:last-child{border-right:0}
-  .fact small{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
-  .fact b{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--navy);line-height:1.2;margin:4px 0 2px}
-  .fact span{font-size:.82rem;color:var(--stone)}
-
-  .sec-head{margin-bottom:34px;max-width:720px}
-  .sec-head .eyebrow{color:var(--gold);margin-bottom:12px}
-  .sec-head h2{font-family:var(--serif);font-size:2.7rem;font-weight:600;color:var(--navy);line-height:1.1}
-  .sec-head p{color:var(--stone);margin-top:10px;font-weight:300;font-size:1.02rem}
-  h3.group{font-family:var(--serif);font-size:1.7rem;font-weight:600;color:var(--navy);margin:48px 0 22px;display:flex;align-items:center;gap:18px}
-  h3.group::after{content:"";flex:1;height:1px;background:var(--line)}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px}
-  .card{background:var(--paper);border:1px solid var(--line);padding:34px 30px 28px;position:relative;transition:.35s;display:flex;flex-direction:column}
-  .card::before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--gold);transition:.4s}
-  .card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(11,22,38,.1);border-color:var(--gold-light)}
-  .card:hover::before{width:100%}
-  .card .no{font-family:var(--serif);font-size:1.1rem;color:var(--gold);letter-spacing:.1em;margin-bottom:18px;display:flex;align-items:center;gap:12px}
-  .card .no::after{content:"";width:30px;height:1px;background:var(--gold-light)}
-  .card h4{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:10px}
-  .card p{font-size:.92rem;color:var(--stone);font-weight:300;flex:1}
-  .card .go{margin-top:24px;font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);
-    display:inline-flex;align-items:center;gap:10px;padding-bottom:4px;border-bottom:1px solid var(--gold);align-self:flex-start;transition:.3s}
-  .card:hover .go{gap:18px;color:var(--gold)}
-
-  .banner{background:linear-gradient(120deg,#070d18,#14294a);color:#fff;padding:34px 38px;margin-bottom:24px;border:1px solid rgba(184,146,74,.45);
-    display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
-  .banner h4{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--gold-light);letter-spacing:.06em}
-  .banner p{font-weight:300;color:#cfd8e6;max-width:520px;font-size:.95rem}
-  .chips{display:flex;gap:10px;flex-wrap:wrap}
-  .chips span{border:1px solid var(--gold);color:var(--gold-light);padding:6px 16px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
-
-  .reflect{display:grid;grid-template-columns:1.3fr 1fr;border:1px solid var(--line);background:var(--paper)}
-  .reflect .left{padding:48px}
-  .reflect h3{font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--navy);margin-bottom:14px}
-  .reflect p{color:var(--stone);font-weight:300;margin-bottom:16px}
-  .focus{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-  .focus span{border:1px solid var(--gold);color:var(--navy);padding:7px 18px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
-  .goalbox{background:linear-gradient(160deg,#070d18,var(--navy2));color:#fff;padding:48px 40px}
-  .goalbox h4{font-family:var(--serif);font-size:1.6rem;color:var(--gold-light);font-weight:600;margin-bottom:18px}
-  .goalbox li{list-style:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);font-weight:300;font-size:.95rem}
-  .goalbox li::before{content:"\2014";color:var(--gold);margin-right:12px}
-
-  .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-  .info div{background:var(--paper);border:1px solid var(--line);border-top:2px solid var(--gold);padding:24px 26px}
-  .info small{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
-  .info b{display:block;font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--navy);margin-top:4px;line-height:1.3}
-  .thanks{text-align:center;margin-top:50px;font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--navy)}
-  footer{margin-top:40px;text-align:center;color:var(--stone);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding-top:26px;border-top:1px solid var(--line)}
-
-  /* ================= DOCUMENT VIEWS ================= */
-  .doc{display:none}
-  .dhero{margin-top:40px;position:relative;color:#fff;padding:56px 56px 60px;
-    background:radial-gradient(circle at 85% 10%,rgba(184,146,74,.28),transparent 45%),linear-gradient(135deg,#070d18 0%,#10233f 100%);
-    border:1px solid rgba(184,146,74,.4)}
-  .dhero::after{content:"";position:absolute;inset:12px;border:1px solid rgba(184,146,74,.22);pointer-events:none}
-  .dhero .back{display:inline-block;margin-bottom:26px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);border-bottom:1px solid var(--gold);padding-bottom:3px}
-  .dhero .back:hover{color:#fff}
-  .dhero .tag{display:block;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
-  .dhero h1{font-family:var(--serif);font-size:clamp(2rem,4.4vw,3.2rem);font-weight:600;line-height:1.12;margin-bottom:12px}
-  .dhero p{max-width:640px;font-weight:300;color:#d4dcea}
-
-  .dsec{margin-top:56px}
-  .doc h2{font-family:var(--serif);font-size:2.1rem;font-weight:600;color:var(--navy);line-height:1.15}
-  .doc h2::after{content:"";display:block;width:56px;height:1px;background:var(--gold);margin-top:12px}
-  .lead{color:var(--stone);margin:16px 0 26px;max-width:780px;font-weight:300;font-size:1.02rem}
-  .lead b{color:var(--navy);font-weight:500}
-
-  .dfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));background:var(--paper);border:1px solid var(--line);margin-top:26px}
-  .dfact{padding:20px 24px;border-right:1px solid var(--line)}
-  .dfact:last-child{border-right:0}
-  .dfact small{font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
-  .dfact p{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--navy);margin-top:2px;line-height:1.25}
-
-  .dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
-  .dcard{background:var(--paper);border:1px solid var(--line);padding:28px;position:relative;transition:.35s}
-  .dcard::before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--gold);transition:.4s}
-  .dcard:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(11,22,38,.1);border-color:var(--gold-light)}
-  .dcard:hover::before{width:100%}
-  .dcard h3{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--navy);line-height:1.25;margin-bottom:8px}
-  .dcard p,.dcard li{font-size:.92rem;color:var(--stone);font-weight:300}
-  .dcard ul{padding-left:18px}
-
-  .scroll{overflow-x:auto}
-  table{width:100%;min-width:560px;border-collapse:collapse;background:var(--paper);border:1px solid var(--line)}
-  th{background:#0b1626;color:var(--gold-light);text-align:left;padding:14px 18px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
-  td{padding:14px 18px;border-top:1px solid var(--line);font-size:.92rem;vertical-align:top;font-weight:300}
-  td:first-child{font-weight:500;color:var(--navy)}
-  tr:nth-child(even) td{background:#fcfbf8}
-
-  .badge{display:inline-block;font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:3px 12px;border:1px solid;white-space:nowrap}
-  .badge.done{color:#2f6b4f;border-color:#2f6b4f;background:#f0f7f3}
-  .badge.progress,.badge.med{color:#8a6a24;border-color:var(--gold);background:#fbf5e8}
-  .badge.todo,.badge.low{color:#44546a;border-color:#9aa8bb;background:#f3f5f8}
-  .badge.high{color:#8f2f2f;border-color:#b45a5a;background:#fbf1f1}
-
-  .story{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);padding:22px 26px;margin-bottom:18px}
-  .story .id{font-size:.7rem;font-weight:500;color:var(--gold);letter-spacing:.2em}
-  .story p{margin:6px 0 10px;color:var(--navy);font-family:var(--serif);font-size:1.25rem;font-weight:600;line-height:1.4}
-  .story ul{padding-left:20px;font-size:.88rem;color:var(--stone);font-weight:300}
-  .story .tasks{font-size:.86rem;color:var(--stone);font-weight:300;margin-top:8px}
-  .story .tasks b{color:var(--navy);font-weight:500}
-
-  .timeline{border-left:1px solid var(--gold);margin-left:8px;padding-left:32px}
-  .tl{position:relative;margin-bottom:24px;background:var(--paper);border:1px solid var(--line);padding:22px 26px}
-  .tl::before{content:"";position:absolute;left:-40px;top:28px;width:15px;height:15px;background:var(--ivory);border:2px solid var(--gold);transform:rotate(45deg)}
-  .tl small{color:var(--gold);font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-size:.68rem}
-  .tl h4{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--navy);margin:2px 0 6px}
-  .tl p,.tl li{font-size:.92rem;color:var(--stone);font-weight:300}
-  .tl ul{padding-left:18px}
-  .tl b{color:var(--navy);font-weight:500}
-
-  .callout{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);padding:24px 28px;margin-top:22px}
-  .callout h3{font-family:var(--serif);font-size:1.4rem;color:var(--navy);margin-bottom:6px}
-  .callout p{color:var(--stone);font-weight:300}
-
-  .evidence{background:var(--paper);border:1px dashed var(--gold);padding:22px;text-align:center}
-  .evidence img{max-width:100%;margin-bottom:10px}
-  .evidence p{font-size:.82rem;color:var(--stone)}
-
-  .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-  .goal{background:var(--paper);border:1px solid var(--line);padding:30px;position:relative;transition:.35s}
-  .goal::before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--gold);transition:.4s}
-  .goal:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(11,22,38,.1)}
-  .goal:hover::before{width:100%}
-  .goal h3{font-family:var(--serif);font-size:1.45rem;font-weight:600;color:var(--navy);margin-bottom:8px}
-  .goal p{font-size:.92rem;color:var(--stone);font-weight:300}
-  .goal .link{margin-top:14px;font-size:.84rem;border-top:1px solid var(--line);padding-top:12px;color:var(--stone)}
-  .goal .link b{color:var(--gold);font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:.68rem}
-  .bar{margin-top:16px}
-  .bar small{display:flex;justify-content:space-between;color:var(--stone);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
-  .track{height:3px;background:var(--line);margin-top:6px}
-  .fillbar{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
-
-  .dreflect{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-  .dreflect .box{background:linear-gradient(160deg,#070d18,var(--navy2));color:#fff;padding:30px}
-  .dreflect .box h3{font-family:var(--serif);color:var(--gold-light);font-size:1.4rem;margin-bottom:8px}
-  .dreflect .box p{font-weight:300;color:#d4dcea;font-size:.94rem}
-  .dreflect .fill{background:rgba(217,191,138,.18);color:var(--gold-light)}
-
-  .nav2{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-  .nav2 a{border:1px solid var(--line);background:var(--paper);padding:9px 20px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);transition:.3s}
-  .nav2 a:hover{border-color:var(--gold);color:var(--gold)}
-
-  .fill{background:#f6ecd2;border-bottom:1px dashed var(--gold);padding:0 6px;color:#7a5b16;font-weight:500}
-  .dfoot{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
-  .dfoot a{color:var(--navy);border-bottom:1px solid var(--gold)}
-
-  /* ================= RESPONSIVE ================= */
-  @media(max-width:960px){
-    .menu-btn{display:block}
-    .sidebar{transform:translateX(-100%)}
-    .sidebar.open{transform:translateX(0);box-shadow:0 0 0 100vmax rgba(0,0,0,.55)}
-    main{margin-left:0;padding:0 18px 40px}
-    .hsec{padding-top:64px}
-    .hero{margin-top:76px;padding:44px 28px;grid-template-columns:1fr}
-    .portrait{width:170px;height:170px;order:-1;justify-self:start}
-    .portrait .photo{font-size:3rem}
-    .reflect{grid-template-columns:1fr}
-    .reflect .left,.goalbox{padding:32px 26px}
-    .sec-head h2{font-size:2.2rem}
-    .fact,.dfact{border-right:0;border-bottom:1px solid var(--line)}
-    .dhero{margin-top:76px;padding:40px 26px}
-    .doc h2{font-size:1.8rem}
-  }
+  .meta-item:last-child { border-bottom: 0; }
+  .section { padding-block: 60px; }
+  .intro-grid, .reflection-inner, .contact-panel { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card { min-height: 240px; }
+  .editorial-panel { min-height: 250px; padding: 27px; }
+  .reflection-content { padding-left: 20px; }
+  .contact-panel { padding: 28px; }
+  .contact-facts { padding-left: 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.2); padding-top: 22px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
+
 <body>
 
-<button class="menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
+<div class="topline">
+  Cape Peninsula University of Technology &nbsp; · &nbsp; WIL Portfolio 2026
+</div>
 
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
-  <div class="brand">
-    <small>Portfolio</small>
-    <h1>My Portfolio</h1>
-    <p>ICT | Application Development<br>CPUT &middot; WIL 2026</p>
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="#home" aria-label="Return to homepage">
+      <div class="brand-mark">SM</div>
+      <div>
+        <div class="brand-title">Sylvia Mahlangu</div>
+        <div class="brand-subtitle">ICT · Application Development</div>
+      </div>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#placement">Placement</a>
+      <a href="#projects">Projects</a>
+      <a href="#agile">Agile Library</a>
+      <a href="#reflection">Reflection</a>
+      <a class="nav-cta" href="#contact">Portfolio Details ↗</a>
+    </nav>
   </div>
-  <div class="rule"></div>
-  <nav class="nav" id="nav">
-    <a href="#home" class="active"><span>01</span> Home</a>
-    <a href="#placement"><span>02</span> Industry Placement</a>
-    <a href="#projects"><span>03</span> WIL Projects</a>
-    <a href="#agile"><span>04</span> Agile Documents</a>
-    <a href="#reflection"><span>05</span> Reflection</a>
-    <a href="#contact"><span>06</span> Contact</a>
-  </nav>
-  <div class="side-foot">
-    <blockquote>&ldquo;Small steps today, big growth tomorrow.&rdquo;</blockquote>
-    <hr>
-    <small>Work Integrated Learning<br>Cape Peninsula University of Technology</small>
-  </div>
-</aside>
+</header>
 
 <main>
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">Work Integrated Learning · 2026</div>
 
-<!-- ======================================================= -->
-<!-- ====================== HOME VIEW ====================== -->
-<!-- ======================================================= -->
-<div id="view-home">
+        <h1 class="serif">
+          Learning.<br>
+          Growing.<br>
+          <em>Becoming.</em>
+        </h1>
 
-<section id="home" style="padding-top:0">
-  <div class="hero">
-    <div>
-      <div class="eyebrow">Work Integrated Learning &middot; 2026</div>
-      <h2>Hello, I'm <em>Sylvia Mahlangu</em></h2>
-      <h3>ICT Student &nbsp;|&nbsp; Application Development</h3>
-      <p>Welcome to my Work Integrated Learning portfolio. It presents my learning journey at DENIS in the IT Department, including my workplace experience, project documentation, Agile planning activities and personal reflections.</p>
-      <div class="btns">
-        <a class="btn gold" href="#agile">Explore My Portfolio</a>
-        <a class="btn line" href="#placement">My WIL Journey</a>
+        <p class="hero-description">
+          A personal record of my journey as an ICT Application Development
+          student at CPUT, exploring professional growth, workplace learning,
+          technical development and project documentation during my placement
+          in the DENIS IT Department.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-gold" href="#placement">
+            EXPLORE MY JOURNEY <span>↗</span>
+          </a>
+          <a class="button button-outline" href="#agile">
+            VIEW DOCUMENTATION
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-aside">
+        <div class="hero-aside-label">The portfolio · Edition 01</div>
+        <h2 class="serif">A journey from academic knowledge to professional practice.</h2>
+        <p>
+          Documenting the experiences, lessons and responsibilities that
+          contribute to my development in Information and Communication Technology.
+        </p>
+        <div class="hero-index">CPUT &nbsp; / &nbsp; DENIS &nbsp; / &nbsp; 2026</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="meta-strip" aria-label="Portfolio overview">
+    <div class="container meta-inner">
+      <div class="meta-item">
+        <div class="meta-label">Academic institution</div>
+        <div class="meta-value">CPUT</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Field of study</div>
+        <div class="meta-value">ICT · Application Development</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Industry placement</div>
+        <div class="meta-value">DENIS · IT Department</div>
       </div>
     </div>
-    <div class="portrait">
-      <!-- To add your photo later, replace the letters below with: <img src="images/sylvia.jpg" alt="Sylvia Mahlangu"> -->
-      <div class="photo">SM</div>
-    </div>
-  </div>
+  </section>
 
-  <div class="facts">
-    <div class="fact"><small>Company</small><b>DENIS</b><span>Dental Information Systems</span></div>
-    <div class="fact"><small>Department</small><b>IT Support</b><span>Network &amp; call-centre systems</span></div>
-    <div class="fact"><small>Project</small><b>UNIWORKS</b><span>Entrepreneurial &middot; 6 sprints</span></div>
-    <div class="fact"><small>Institution</small><b>CPUT</b><span>ICT Application Development</span></div>
-  </div>
-</section>
-
-<section id="placement" class="hsec">
-  <div class="sec-head">
-    <div class="eyebrow">Chapter 01</div>
-    <h2>Industry Placement</h2>
-    <p>My workplace learning experience at DENIS &mdash; IT Department.</p>
-  </div>
-  <div class="grid">
-    <a class="card" href="#doc-industry-placement"><div class="no">01</div><h4>Industry Placement</h4>
-      <p>My placement details, learning objectives, responsibilities and professional development.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" id="projects" href="#doc-wil-projects"><div class="no">02</div><h4>WIL Projects</h4>
-      <p>An overview of my workplace projects, contributions, learning activities and evidence.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-learning-goals"><div class="no">03</div><h4>Learning Goals</h4>
-      <p>The skills I aim to develop and how I connect my studies with practical experience.</p><span class="go">View reflection &rarr;</span></a>
-  </div>
-</section>
-
-<section id="agile" class="hsec">
-  <div class="sec-head">
-    <div class="eyebrow">Chapter 02</div>
-    <h2>Agile Project Documentation</h2>
-    <p>My documentation is organised into workplace projects and the Entrepreneurial WIL Project.</p>
-  </div>
-
-  <h3 class="group">Workplace Projects &mdash; DENIS</h3>
-  <div class="grid">
-    <a class="card" href="#doc-agile-team-charter"><div class="no">01</div><h4>Agile Team Charter</h4>
-      <p>Team purpose, shared values, roles and working agreements for the workplace project.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-company-user-stories"><div class="no">02</div><h4>User Stories and Tasks</h4>
-      <p>User needs, requirements and the tasks needed to address them.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-company-product-backlog"><div class="no">03</div><h4>Product Backlog</h4>
-      <p>A prioritised list of project requirements and improvements.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-company-sprint-backlog"><div class="no">04</div><h4>Sprint Backlog</h4>
-      <p>The tasks selected for a sprint, progress updates and blockers.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-company-agile-logbook"><div class="no">05</div><h4>Agile Logbook</h4>
-      <p>Dated activities, achievements, challenges and learning reflections.</p><span class="go">View document &rarr;</span></a>
-  </div>
-
-  <h3 class="group">Entrepreneurial WIL Project</h3>
-  <div class="banner">
-    <div><h4>UNIWORKS</h4><p>Planned and managed with Agile on Trello across six sprints, from project initiation to prototype.</p></div>
-    <div class="chips"><span>6 Sprints</span><span>Team of 6</span><span>Trello</span></div>
-  </div>
-  <div class="grid">
-    <a class="card" href="#doc-agile-project-charter"><div class="no">01</div><h4>Agile Project Charter</h4>
-      <p>The entrepreneurial project's purpose, objectives, scope and stakeholders.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-entrepreneurial-user-stories"><div class="no">02</div><h4>User Stories and Tasks</h4>
-      <p>User requirements and development tasks for the entrepreneurial project.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-entrepreneurial-product-backlog"><div class="no">03</div><h4>Product Backlog</h4>
-      <p>Prioritised features, requirements and improvements for the project.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-entrepreneurial-sprint-backlog"><div class="no">04</div><h4>Sprint Backlog</h4>
-      <p>Planned sprint work, tasks and progress toward the sprint goal.</p><span class="go">View document &rarr;</span></a>
-    <a class="card" href="#doc-entrepreneurial-agile-logbook"><div class="no">05</div><h4>Agile Logbook</h4>
-      <p>Project activities, progress, challenges and retrospective reflections.</p><span class="go">View document &rarr;</span></a>
-  </div>
-</section>
-
-<section id="reflection" class="hsec">
-  <div class="sec-head">
-    <div class="eyebrow">Chapter 03</div>
-    <h2>My Learning and Reflection</h2>
-    <p>Growing as an IT professional.</p>
-  </div>
-  <div class="reflect">
-    <div class="left">
-      <h3>Growing as an IT Professional</h3>
-      <p>My WIL portfolio documents what I learn, how I contribute, the challenges I encounter and the steps I take to improve. Each reflection is supported by evidence of my own activities and learning.</p>
-      <p><b style="font-weight:500;color:var(--navy)">My focus</b></p>
-      <div class="focus">
-        <span>Technical development</span><span>Problem-solving</span><span>Communication</span><span>Teamwork</span><span>Professional growth</span>
+  <section class="section section-white" id="placement">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">01 / The experience</div>
+          <h2>Industry Placement</h2>
+        </div>
+        <p>
+          An overview of my workplace experience, developing responsibilities,
+          learning objectives and professional growth.
+        </p>
       </div>
-      <a class="btn gold" href="#doc-learning-goals">Read my learning goals</a>
+
+      <div class="intro-grid">
+        <div class="editorial-panel">
+          <div class="eyebrow">My professional journey</div>
+          <div>
+            <div class="number">01</div>
+            <h3>Learning beyond the classroom.</h3>
+            <p>
+              Connecting my ICT studies with practical workplace experience,
+              developing my understanding of systems, technical support and
+              professional responsibility.
+            </p>
+          </div>
+        </div>
+
+        <div class="intro-copy">
+          <div class="eyebrow">About this portfolio</div>
+          <h3>A record of progress, practice and reflection.</h3>
+          <p>
+            This portfolio documents my Work Integrated Learning journey.
+            It brings together my placement experience, learning activities,
+            project records and reflections on the skills I am developing.
+          </p>
+          <p>
+            My learning journey includes workplace induction, becoming familiar
+            with workplace systems, assisting with system-related issues and
+            continuing to develop my understanding of networking.
+          </p>
+
+          <div class="fact-list">
+            <div class="fact">
+              <span>Student</span>
+              <span>Sylvia Mahlangu</span>
+            </div>
+            <div class="fact">
+              <span>Qualification area</span>
+              <span>ICT Application Development</span>
+            </div>
+            <div class="fact">
+              <span>Placement department</span>
+              <span>DENIS IT Department</span>
+            </div>
+          </div>
+
+          <p>
+            <a class="button button-gold" href="docs/industry-placement.md">
+              READ PLACEMENT DOCUMENT ↗
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="goalbox">
-      <h4>At DENIS I am learning</h4>
-      <ul>
-        <li>Network support</li>
-        <li>Helping call-centre agents with system issues</li>
-        <li>Helpdesk and issue tracking</li>
-        <li>Data protection and professional conduct</li>
-      </ul>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">02 / Selected work</div>
+          <h2>Projects & Learning</h2>
+        </div>
+        <p>
+          Explore the records of my learning activities, project experiences
+          and professional development.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-number">01</span>
+            <span class="card-symbol">◈</span>
+          </div>
+          <div class="card-category">Work Integrated Learning</div>
+          <h3>My WIL Projects</h3>
+          <p>
+            An overview of my workplace learning, project experiences and
+            the development of my practical skills.
+          </p>
+          <a class="card-link" href="docs/wil-projects.md">
+            <span>VIEW DOCUMENT</span><span>↗</span>
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-number">02</span>
+            <span class="card-symbol">◎</span>
+          </div>
+          <div class="card-category">Personal development</div>
+          <h3>Learning Goals</h3>
+          <p>
+            The skills I aim to develop, the knowledge I am gaining and
+            the areas I want to strengthen.
+          </p>
+          <a class="card-link" href="docs/learning-goals.md">
+            <span>VIEW DOCUMENT</span><span>↗</span>
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-number">03</span>
+            <span class="card-symbol">✧</span>
+          </div>
+          <div class="card-category">Evidence & records</div>
+          <h3>Evidence Logbook</h3>
+          <p>
+            A structured register of supporting evidence, learning notes
+            and reflections on my development.
+          </p>
+          <a class="card-link" href="docs/evidence-logbook.md">
+            <span>VIEW DOCUMENT</span><span>↗</span>
+          </a>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="hsec">
-  <div class="sec-head">
-    <div class="eyebrow">Chapter 04</div>
-    <h2>Portfolio Information</h2>
-    <p>Details about this portfolio.</p>
-  </div>
-  <div class="info">
-    <div><small>Student</small><b>Sylvia Mahlangu</b></div>
-    <div><small>Institution</small><b>Cape Peninsula University of Technology</b></div>
-    <div><small>Placement</small><b>DENIS &mdash; IT Department</b></div>
-    <div><small>Portfolio</small><b>Work Integrated Learning, 2026</b></div>
-    <div><small>Email</small><b>[your email address]</b></div>
-  </div>
-  <p class="thanks">Thank you for visiting my portfolio.</p>
-  <footer>&copy; 2026 &middot; WIL Portfolio &middot; CPUT &middot; ICT Application Development</footer>
-</section>
+  <section class="section section-white" id="agile">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">03 / The documentation library</div>
+          <h2>Agile Project Documents</h2>
+        </div>
+        <p>
+          Organised project records covering planning, user needs, priorities,
+          sprint activities and reflections.
+        </p>
+      </div>
 
-</div><!-- /view-home -->
+      <h3 class="subsection-title">Workplace Learning · DENIS</h3>
 
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-number">04</span>
+            <span class="card-symbol">♧</span>
+          </div>
+          <div class="card-category">Team collaboration</div>
+          <h3>Agile Team Charter</h3>
+          <p>Team purpose, shared values, roles and working agreements for learning and project planning.</p>
+          <a class="card-link" href="docs/agile-team-charter.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
 
-<!-- ======================================================= -->
-<!-- =================== DOCUMENT VIEWS ==================== -->
-<!-- ======================================================= -->
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-number">05</span>
+            <span class="card-symbol">⌘</span>
+          </div>
+          <div class="card-category">Requirements</div>
+          <h3>User Stories & Tasks</h3>
+          <p>User needs and task examples used to understand requirements and expected outcomes.</p>
+          <a class="card-link" href="docs/company-user-stories.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
 
-<!-- ---------- 1. INDUSTRY PLACEMENT ---------- -->
-<article class="doc" id="doc-industry-placement" data-nav="#placement">
-  <header class="dhero">
-    <a class="back" href="#placement">&larr; Back to portfolio</a>
-    <span class="tag">Industry Placement &middot; CPUT WIL 2026</span>
-    <h1>My Workplace Learning at DENIS</h1>
-    <p>My experience as an ICT Application Development intern in the IT Department of Dental Information Systems.</p>
-  </header>
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-number">06</span>
+            <span class="card-symbol">▤</span>
+          </div>
+          <div class="card-category">Prioritisation</div>
+          <h3>Product Backlog</h3>
+          <p>A structured learning backlog showing priorities and areas for improvement.</p>
+          <a class="card-link" href="docs/company-product-backlog.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
 
-  <div class="dfacts">
-    <div class="dfact"><small>Company</small><p>DENIS (Dental Information Systems)</p></div>
-    <div class="dfact"><small>Department</small><p>Information Technology</p></div>
-    <div class="dfact"><small>Role</small><p>IT Intern</p></div>
-    <div class="dfact"><small>Time so far</small><p>3 months</p></div>
-    <div class="dfact"><small>Supervisor</small><p><span class="fill">[name]</span></p></div>
-  </div>
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-number">07</span>
+            <span class="card-symbol">◷</span>
+          </div>
+          <div class="card-category">Planning</div>
+          <h3>Sprint Backlog</h3>
+          <p>A record of planned learning activities, progress and areas requiring support.</p>
+          <a class="card-link" href="docs/company-sprint-backlog.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
 
-  <div class="dsec">
-    <h2>About DENIS</h2>
-    <p class="lead">DENIS is a South African company that has specialised in managing dental benefits for medical schemes since 1996. It uses technology to support dental benefit management. In simple words, DENIS helps medical schemes manage the dental benefits available to their members, including claims and treatment authorisations.</p>
-    <div class="dgrid">
-      <div class="dcard"><h3>Dental Claims</h3><p>Processing information about dental treatments submitted for payment.</p></div>
-      <div class="dcard"><h3>Dental Benefits</h3><p>Helping administer the benefits available under different medical schemes.</p></div>
-      <div class="dcard"><h3>Treatment Authorisations</h3><p>Assessing certain treatments before they are performed, according to the scheme's rules.</p></div>
-      <div class="dcard"><h3>Provider Networks</h3><p>Working with dentists and dental practices.</p></div>
-      <div class="dcard"><h3>Technology Systems</h3><p>Supporting the digital systems used to manage these services.</p></div>
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-number">08</span>
+            <span class="card-symbol">▧</span>
+          </div>
+          <div class="card-category">Reflection</div>
+          <h3>Agile Logbook</h3>
+          <p>Activities, challenges, progress and personal learning reflections throughout placement.</p>
+          <a class="card-link" href="docs/company-agile-logbook.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
+      </div>
+
+      <h3 class="subsection-title">Entrepreneurial WIL Project</h3>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-top"><span class="card-number">09</span><span class="card-symbol">◇</span></div>
+          <div class="card-category">Project foundation</div>
+          <h3>Agile Project Charter</h3>
+          <p>The project's purpose, objectives, scope and stakeholders.</p>
+          <a class="card-link" href="docs/agile-project-charter.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top"><span class="card-number">10</span><span class="card-symbol">⌘</span></div>
+          <div class="card-category">User requirements</div>
+          <h3>User Stories & Tasks</h3>
+          <p>User requirements and the tasks associated with project development.</p>
+          <a class="card-link" href="docs/entrepreneurial-user-stories.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top"><span class="card-number">11</span><span class="card-symbol">▤</span></div>
+          <div class="card-category">Feature priorities</div>
+          <h3>Product Backlog</h3>
+          <p>A prioritised record of features, requirements and improvements.</p>
+          <a class="card-link" href="docs/entrepreneurial-product-backlog.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top"><span class="card-number">12</span><span class="card-symbol">◷</span></div>
+          <div class="card-category">Sprint planning</div>
+          <h3>Sprint Backlog</h3>
+          <p>Planned sprint activities, task progress and learning outcomes.</p>
+          <a class="card-link" href="docs/entrepreneurial-sprint-backlog.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top"><span class="card-number">13</span><span class="card-symbol">▧</span></div>
+          <div class="card-category">Project reflection</div>
+          <h3>Agile Logbook</h3>
+          <p>A record of project activities, challenges and retrospective reflections.</p>
+          <a class="card-link" href="docs/entrepreneurial-agile-logbook.md"><span>VIEW DOCUMENT</span><span>↗</span></a>
+        </article>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="dsec">
-    <h2>The IT Department</h2>
-    <p class="lead">The IT department makes sure the company's computers, software, networks and information systems work properly so employees can do their jobs.</p>
-    <div class="dgrid">
-      <div class="dcard"><h3>Technical Support</h3><p>Helping staff when computers, printers, email or software fail.</p></div>
-      <div class="dcard"><h3>Networks &amp; Infrastructure</h3><p>Keeping the network and internet connections running so staff can reach the systems they need.</p></div>
-      <div class="dcard"><h3>Cybersecurity &amp; Data Protection</h3><p>Protecting systems from unauthorised access, malware and data loss, especially for confidential member information.</p></div>
-      <div class="dcard"><h3>Systems, Databases &amp; Backups</h3><p>Supporting business applications and making sure information can be recovered.</p></div>
+  <section class="reflection" id="reflection">
+    <div class="container reflection-inner">
+      <div class="reflection-heading">
+        <div class="eyebrow">04 / Personal reflection</div>
+        <h2 class="serif">Growth is a process.</h2>
+        <p>
+          Every experience offers an opportunity to learn, reflect and improve.
+        </p>
+      </div>
+
+      <div class="reflection-content">
+        <div class="quote">
+          “The goal is not simply to gain experience, but to understand
+          what each experience teaches me.”
+        </div>
+        <p>
+          My Work Integrated Learning journey is helping me connect my academic
+          knowledge with the realities of a professional IT environment.
+          Through induction, workplace learning, assisting with system-related
+          issues and developing my networking knowledge, I am gradually
+          building confidence and a stronger understanding of the field.
+        </p>
+        <p>
+          I recognise that professional growth requires curiosity, patience,
+          communication and a willingness to learn from challenges.
+          This portfolio provides a place to document that development
+          and reflect honestly on my progress.
+        </p>
+        <a class="button button-gold" href="docs/industry-placement.md">
+          EXPLORE MY REFLECTIONS ↗
+        </a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="dsec">
-    <h2>My Role as an IT Intern</h2>
-    <p class="lead">I assist the IT team with <b>network support</b> and with <b>system issues reported by call-centre agents</b>, learning how IT works in a real business environment under supervision.</p>
-    <div class="dgrid">
-      <div class="dcard"><h3>Network support</h3><p>Helping with network and connectivity issues and learning how computers connect to the company network.</p></div>
-      <div class="dcard"><h3>Call-centre system support</h3><p>Assisting call-centre agents when they have problems with the systems they use, so they can keep helping callers.</p></div>
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-panel">
+        <div>
+          <div class="eyebrow">Portfolio information</div>
+          <h2>Sylvia Mahlangu</h2>
+          <p>
+            ICT Application Development student documenting my Work
+            Integrated Learning experience.
+          </p>
+        </div>
+        <div class="contact-facts">
+          <div class="contact-fact">
+            <span>Institution</span>
+            <strong>Cape Peninsula University of Technology</strong>
+          </div>
+          <div class="contact-fact">
+            <span>Industry placement</span>
+            <strong>DENIS · IT Department</strong>
+          </div>
+          <div class="contact-fact">
+            <span>Portfolio</span>
+            <strong>Work Integrated Learning · 2026</strong>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="dsec">
-    <h2>My Placement Journey</h2>
-    <div class="timeline" style="margin-top:24px">
-      <div class="tl"><small>Month 1</small><h4>Onboarding and approvals</h4>
-        <p>My application had to go through several departments before I could start. Once approved, a schedule was created for my first two months of the placement.</p></div>
-      <div class="tl"><small>Months 2 to 3</small><h4>Hands-on IT support</h4>
-        <p>I began assisting with network issues and supporting call-centre agents with system problems, while learning how the IT team logs, tracks and resolves requests.</p></div>
-      <div class="tl"><small>Next</small><h4><span class="fill">[What you are working toward]</span></h4>
-        <p><span class="fill">[One sentence]</span></p></div>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Learning Areas</h2>
-    <div class="scroll" style="margin-top:24px"><table>
-      <tr><th>Area</th><th>What I am learning</th></tr>
-      <tr><td>Helpdesk</td><td>Recording problems and tracking support requests</td></tr>
-      <tr><td>Networking</td><td>How computers connect to the company network</td></tr>
-      <tr><td>Hardware &amp; software</td><td>Equipment setup, approved software and troubleshooting errors</td></tr>
-      <tr><td>User accounts</td><td>How access and permissions are managed</td></tr>
-      <tr><td>Cybersecurity</td><td>Password safety, access control and data protection</td></tr>
-      <tr><td>Documentation</td><td>Recording IT tasks and solutions to problems</td></tr>
-    </table></div>
-    <div class="callout">
-      <h3>Professional conduct</h3>
-      <p>I always get my supervisor's permission before changing settings, installing software or accessing sensitive information. DENIS handles confidential healthcare-related information, so I treat all data with care.</p>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>How My Studies Connect</h2>
-    <div class="dgrid" style="margin-top:24px">
-      <div class="dcard"><h3>Application Development</h3><p>Seeing how applications are designed, tested, maintained and improved to solve business problems.</p></div>
-      <div class="dcard"><h3>Databases</h3><p>How an organisation stores, retrieves, updates and protects information.</p></div>
-      <div class="dcard"><h3>Information Security</h3><p>Why permissions and confidentiality matter in healthcare.</p></div>
-      <div class="dcard"><h3>Professional Skills</h3><p>Communication, teamwork and problem-solving in practice.</p></div>
-    </div>
-  </div>
-  <div class="dfoot"><span>Industry Placement</span><a href="#placement">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 2. WIL PROJECTS ---------- -->
-<article class="doc" id="doc-wil-projects" data-nav="#projects">
-  <header class="dhero">
-    <a class="back" href="#placement">&larr; Back to portfolio</a>
-    <span class="tag">WIL Projects</span>
-    <h1>My Projects &amp; Contributions</h1>
-    <p>The two projects in my portfolio: my work in the DENIS IT Department and my UNIWORKS entrepreneurial project.</p>
-  </header>
-
-  <div class="dfacts">
-    <div class="dfact"><small>Workplace project</small><p>IT Support at DENIS</p></div>
-    <div class="dfact"><small>Entrepreneurial project</small><p>UNIWORKS</p></div>
-    <div class="dfact"><small>UNIWORKS sprints</small><p>6 sprints</p></div>
-    <div class="dfact"><small>UNIWORKS team</small><p>6 members</p></div>
-  </div>
-
-  <div class="dsec">
-    <h2>Workplace Project: IT Support at DENIS</h2>
-    <p class="lead">My work in the IT Department supporting the network and the call-centre agents.</p>
-    <div class="dgrid">
-      <div class="dcard"><h3>Purpose</h3><p>Keep staff productive by helping resolve network and system problems quickly.</p></div>
-      <div class="dcard"><h3>Users</h3><p>Call-centre agents and other DENIS staff who depend on IT systems.</p></div>
-      <div class="dcard"><h3>My contribution</h3><ul><li>Assisting with network issues</li><li>Supporting call-centre agents with system problems</li><li><span class="fill">[add more]</span></li></ul></div>
-      <div class="dcard"><h3>What I learned</h3><p><span class="fill">[2 to 3 sentences]</span></p></div>
-    </div>
-    <div class="nav2">
-      <a href="#doc-agile-team-charter">Team Charter</a><a href="#doc-company-user-stories">User Stories</a>
-      <a href="#doc-company-product-backlog">Product Backlog</a><a href="#doc-company-sprint-backlog">Sprint Backlog</a>
-      <a href="#doc-company-agile-logbook">Agile Logbook</a>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Entrepreneurial Project: UNIWORKS</h2>
-    <p class="lead">A team project I completed before my placement, planned and managed with Agile on Trello across six sprints.</p>
-    <div class="dgrid">
-      <div class="dcard"><h3>The idea</h3><p><span class="fill">[One sentence on what UNIWORKS does]</span></p></div>
-      <div class="dcard"><h3>What we covered</h3><ul><li>Project initiation and market research</li><li>Agile setup and team agreements</li><li>Platform scope, campus growth and partnerships</li><li>User stories, estimation and prototype</li></ul></div>
-      <div class="dcard"><h3>My role</h3><p><span class="fill">[What you personally did]</span></p></div>
-    </div>
-    <div class="nav2">
-      <a href="#doc-agile-project-charter">Project Charter</a><a href="#doc-entrepreneurial-user-stories">User Stories</a>
-      <a href="#doc-entrepreneurial-product-backlog">Product Backlog</a><a href="#doc-entrepreneurial-sprint-backlog">Sprint Backlog</a>
-      <a href="#doc-entrepreneurial-agile-logbook">Agile Logbook</a>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Skills Developed</h2>
-    <div class="dgrid" style="margin-top:24px">
-      <div class="dcard"><h3>Technical</h3><p>Troubleshooting, networking basics, helpdesk processes, documentation.</p></div>
-      <div class="dcard"><h3>Agile</h3><p>Sprint planning, user stories, estimation, backlogs, Trello.</p></div>
-      <div class="dcard"><h3>Professional</h3><p>Teamwork, communication, time management, confidentiality.</p></div>
-    </div>
-    <div class="callout"><h3>Confidentiality</h3><p>DENIS handles confidential medical scheme and member information. None appears in this portfolio.</p></div>
-  </div>
-  <div class="dfoot"><span>WIL Projects</span><a href="#placement">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 3. LEARNING GOALS ---------- -->
-<article class="doc" id="doc-learning-goals" data-nav="#reflection">
-  <header class="dhero">
-    <a class="back" href="#reflection">&larr; Back to portfolio</a>
-    <span class="tag">Learning Goals &middot; Reflection</span>
-    <h1>Growing as an IT Professional</h1>
-    <p>The skills I aim to develop at DENIS and how I connect my studies with practical experience.</p>
-  </header>
-
-  <div class="dsec">
-    <h2>My Learning Goals</h2>
-    <p class="lead">Five areas I am focusing on during my placement in the IT Department. Update the progress percentages as you grow.</p>
-    <div class="goals">
-      <div class="goal"><h3>Technical Development</h3>
-        <p>Build practical skills in troubleshooting, software, networks and systems used in a real business.</p>
-        <div class="link"><b>Studies link</b><br>Programming, application development and databases.</div>
-        <div class="bar"><small><span>Progress</span><span>40%</span></small><div class="track"><div class="fillbar" style="width:40%"></div></div></div></div>
-      <div class="goal"><h3>Problem-Solving</h3>
-        <p>Diagnose an issue step by step, find the cause and record the solution for next time.</p>
-        <div class="link"><b>Studies link</b><br>Logic and debugging in application development.</div>
-        <div class="bar"><small><span>Progress</span><span>35%</span></small><div class="track"><div class="fillbar" style="width:35%"></div></div></div></div>
-      <div class="goal"><h3>Communication</h3>
-        <p>Explain technical issues clearly to non-technical colleagues and ask my supervisor good questions.</p>
-        <div class="link"><b>Studies link</b><br>Professional and communication skills.</div>
-        <div class="bar"><small><span>Progress</span><span>45%</span></small><div class="track"><div class="fillbar" style="width:45%"></div></div></div></div>
-      <div class="goal"><h3>Teamwork</h3>
-        <p>Work well with the IT team, follow Agile practices and take responsibility for my tasks.</p>
-        <div class="link"><b>Studies link</b><br>Agile methodology and team projects.</div>
-        <div class="bar"><small><span>Progress</span><span>40%</span></small><div class="track"><div class="fillbar" style="width:40%"></div></div></div></div>
-      <div class="goal"><h3>Data Protection &amp; Professionalism</h3>
-        <p>Understand why confidentiality and access control are essential when handling healthcare-related information.</p>
-        <div class="link"><b>Studies link</b><br>Information security.</div>
-        <div class="bar"><small><span>Progress</span><span>30%</span></small><div class="track"><div class="fillbar" style="width:30%"></div></div></div></div>
-      <div class="goal"><h3>My Personal Goal</h3>
-        <p><span class="fill">[Write your own goal]</span></p>
-        <div class="bar"><small><span>Progress</span><span>0%</span></small><div class="track"><div class="fillbar" style="width:0%"></div></div></div></div>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Studies Meet the Workplace</h2>
-    <p class="lead">How what I learn at CPUT connects to what I experience at DENIS.</p>
-    <div class="scroll"><table>
-      <tr><th>What I study</th><th>Where I see it at DENIS</th></tr>
-      <tr><td>Application development</td><td>Business applications are designed, tested, maintained and improved to solve real problems.</td></tr>
-      <tr><td>Databases</td><td>Claims and benefit information must be stored, retrieved, updated and protected.</td></tr>
-      <tr><td>Information security</td><td>Access permissions, backups and data protection safeguard confidential member data.</td></tr>
-      <tr><td>Agile methodology</td><td>Sprints, backlogs and a logbook organise my project work.</td></tr>
-    </table></div>
-  </div>
-
-  <div class="dsec">
-    <h2>My Reflection</h2>
-    <p class="lead">Short reflections I will update as my placement progresses.</p>
-    <div class="dreflect">
-      <div class="box"><h3>What I have learned so far</h3><p><span class="fill">[2 to 3 sentences]</span></p></div>
-      <div class="box"><h3>My biggest challenge</h3><p><span class="fill">[2 to 3 sentences]</span></p></div>
-      <div class="box"><h3>What I will improve</h3><p><span class="fill">[2 to 3 sentences]</span></p></div>
-    </div>
-  </div>
-  <div class="dfoot"><span>Learning Goals</span><a href="#reflection">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 4. AGILE TEAM CHARTER ---------- -->
-<article class="doc" id="doc-agile-team-charter" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Workplace Project &middot; DENIS</span>
-    <h1>Agile Team Charter</h1>
-    <p>Our purpose, shared values, roles and working agreements for IT support at DENIS.</p>
-  </header>
-
-  <div class="dsec">
-    <h2>Team Purpose</h2>
-    <p class="lead">To keep DENIS staff working by resolving network issues and supporting call-centre agents with system problems quickly, safely and with clear records.</p>
-  </div>
-
-  <div class="dsec">
-    <h2>Roles</h2>
-    <div class="scroll" style="margin-top:24px"><table>
-      <tr><th>Name</th><th>Role</th><th>Responsibilities</th></tr>
-      <tr><td>Sylvia Mahlangu</td><td>IT Intern</td><td>Assist with network issues and call-centre system problems; record issues and solutions; ask before changing anything</td></tr>
-      <tr><td><span class="fill">[Name]</span></td><td>Supervisor</td><td>Assigns work, approves changes, reviews my progress</td></tr>
-      <tr><td><span class="fill">[Name]</span></td><td><span class="fill">[Role]</span></td><td><span class="fill">[..]</span></td></tr>
-    </table></div>
-  </div>
-
-  <div class="dsec">
-    <h2>Shared Values</h2>
-    <div class="dgrid" style="margin-top:24px">
-      <div class="dcard"><h3>Confidentiality</h3><p>Member and scheme information is protected at all times.</p></div>
-      <div class="dcard"><h3>Respect &amp; communication</h3><p>Clear, polite communication with colleagues and agents.</p></div>
-      <div class="dcard"><h3>Accountability</h3><p>I take ownership of my tasks and report progress honestly.</p></div>
-      <div class="dcard"><h3>Learning</h3><p>Asking questions and learning from every issue.</p></div>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Working Agreements</h2>
-    <div class="dgrid" style="margin-top:24px">
-      <div class="dcard"><h3>Permission first</h3><p>I get my supervisor's approval before changing settings, installing software or accessing sensitive information.</p></div>
-      <div class="dcard"><h3>Record everything</h3><p>Every issue, its cause and its fix goes into the logbook.</p></div>
-      <div class="dcard"><h3>Working hours</h3><p><span class="fill">[e.g. 08:00 to 16:30]</span></p></div>
-      <div class="dcard"><h3>Check-ins</h3><p><span class="fill">[e.g. daily check-in with supervisor]</span></p></div>
-    </div>
-    <div class="callout"><h3>Definition of done</h3><p>An issue is done when it is resolved, the user confirms it works, and it is recorded in the logbook.</p></div>
-  </div>
-  <div class="dfoot"><span>Agile Team Charter</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 5. COMPANY USER STORIES ---------- -->
-<article class="doc" id="doc-company-user-stories" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Workplace Project &middot; DENIS</span>
-    <h1>User Stories &amp; Tasks</h1>
-    <p>What the people I support need from IT, and the tasks that address those needs.</p>
-  </header>
-  <div class="dsec">
-    <p class="lead">Written as: <i>As a [user], I want [goal], so that [benefit].</i> Edit these so they match the real issues you handle.</p>
-
-    <div class="story"><span class="id">US-01 &middot; <span class="badge high">High</span></span>
-      <p>As a call-centre agent, I want to report a system problem and have it logged, so that it gets tracked until it is fixed.</p>
-      <ul><li>The issue is recorded with date, description and agent's department</li><li>The agent knows the issue has been received</li></ul>
-      <div class="tasks"><b>Tasks:</b> log the request &middot; confirm with the agent &middot; hand over or escalate if needed</div></div>
-
-    <div class="story"><span class="id">US-02 &middot; <span class="badge high">High</span></span>
-      <p>As a call-centre agent, I want my system problem resolved quickly, so that I can keep helping callers.</p>
-      <ul><li>Common problems are checked and fixed or escalated</li><li>The agent confirms the system works again</li></ul>
-      <div class="tasks"><b>Tasks:</b> diagnose the problem &middot; apply an approved fix &middot; confirm with the agent</div></div>
-
-    <div class="story"><span class="id">US-03 &middot; <span class="badge med">Medium</span></span>
-      <p>As an IT team member, I want network issues recorded with their symptoms and fix, so that the team can reuse the solution.</p>
-      <ul><li>Each network issue has a recorded cause and fix</li></ul>
-      <div class="tasks"><b>Tasks:</b> note symptoms &middot; record the fix &middot; update the logbook</div></div>
-
-    <div class="story"><span class="id">US-04 &middot; <span class="badge med">Medium</span></span>
-      <p>As a supervisor, I want to see which problems keep recurring, so that we can prevent them.</p>
-      <ul><li>Recurring issues are identified from the logbook</li></ul>
-      <div class="tasks"><b>Tasks:</b> review the logbook &middot; list repeat issues &middot; report to the supervisor</div></div>
-
-    <div class="story"><span class="id">US-05 &middot; <span class="badge low">Low</span></span>
-      <p>As an intern, I want clear procedures to follow, so that I help safely and know when to ask.</p>
-      <ul><li>I follow approved steps and ask before changing settings</li></ul>
-      <div class="tasks"><b>Tasks:</b> read procedures &middot; confirm unclear steps with the supervisor</div></div>
-  </div>
-  <div class="dfoot"><span>User Stories &amp; Tasks</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 6. COMPANY PRODUCT BACKLOG ---------- -->
-<article class="doc" id="doc-company-product-backlog" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Workplace Project &middot; DENIS</span>
-    <h1>Product Backlog</h1>
-    <p>A prioritised list of requirements and improvements for IT support.</p>
-  </header>
-  <div class="dsec">
-    <p class="lead">Ordered by value and urgency. Update the status column to match your real progress.</p>
-    <div class="scroll"><table>
-      <tr><th>Priority</th><th>ID</th><th>Item</th><th>Story</th><th>Status</th></tr>
-      <tr><td>1</td><td>PB-01</td><td>Log and track call-centre system issues</td><td>US-01</td><td><span class="fill">[status]</span></td></tr>
-      <tr><td>2</td><td>PB-02</td><td>Troubleshoot and resolve common call-centre system problems</td><td>US-02</td><td><span class="fill">[status]</span></td></tr>
-      <tr><td>3</td><td>PB-03</td><td>Network issue troubleshooting and support</td><td>US-03</td><td><span class="fill">[status]</span></td></tr>
-      <tr><td>4</td><td>PB-04</td><td>Record issue, cause and fix in the logbook</td><td>US-03</td><td><span class="fill">[status]</span></td></tr>
-      <tr><td>5</td><td>PB-05</td><td>Identify recurring issues from logged records</td><td>US-04</td><td><span class="fill">[status]</span></td></tr>
-      <tr><td>6</td><td>PB-06</td><td>Learn and follow IT procedures and security practices</td><td>US-05</td><td><span class="fill">[status]</span></td></tr>
-    </table></div>
-    <p class="lead" style="margin-top:14px"><b>Status key:</b> To do &middot; In sprint &middot; In progress &middot; Done</p>
-  </div>
-  <div class="dfoot"><span>Product Backlog</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 7. COMPANY SPRINT BACKLOG ---------- -->
-<article class="doc" id="doc-company-sprint-backlog" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Workplace Project &middot; DENIS</span>
-    <h1>Sprint Backlog</h1>
-    <p>The tasks selected for the current sprint, with progress and blockers.</p>
-  </header>
-  <div class="dfacts">
-    <div class="dfact"><small>Sprint</small><p><span class="fill">[number]</span></p></div>
-    <div class="dfact"><small>Dates</small><p><span class="fill">[start] to [end]</span></p></div>
-  </div>
-  <div class="dsec">
-    <h2>Sprint Goal</h2>
-    <p class="lead">Support call-centre agents and the network so staff can work without interruption, and record every issue and fix. <span class="fill">[adjust]</span></p>
-  </div>
-  <div class="dsec">
-    <h2>Selected Tasks</h2>
-    <div class="scroll" style="margin-top:24px"><table>
-      <tr><th>Backlog ID</th><th>Task</th><th>Status</th></tr>
-      <tr><td>PB-01</td><td>Log call-centre system issues</td><td><span class="badge progress">In progress</span></td></tr>
-      <tr><td>PB-02</td><td>Resolve common system problems for agents</td><td><span class="badge progress">In progress</span></td></tr>
-      <tr><td>PB-03</td><td>Assist with network issues</td><td><span class="badge progress">In progress</span></td></tr>
-      <tr><td>PB-04</td><td>Update the logbook</td><td><span class="badge todo">To do</span></td></tr>
-    </table></div>
-  </div>
-  <div class="dsec">
-    <h2>Blockers &amp; Review</h2>
-    <div class="dgrid" style="margin-top:24px">
-      <div class="dcard"><h3>Blockers</h3><p><span class="fill">[e.g. waiting for access approval]</span></p></div>
-      <div class="dcard"><h3>Completed</h3><p><span class="fill">[..]</span></p></div>
-      <div class="dcard"><h3>Retrospective</h3><p><span class="fill">[What went well, what to improve]</span></p></div>
-    </div>
-  </div>
-  <div class="dfoot"><span>Sprint Backlog</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 8. COMPANY AGILE LOGBOOK ---------- -->
-<article class="doc" id="doc-company-agile-logbook" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Workplace Project &middot; DENIS</span>
-    <h1>Agile Logbook</h1>
-    <p>Dated activities, achievements, challenges and reflections from my placement.</p>
-  </header>
-  <div class="dsec">
-    <div class="timeline">
-      <div class="tl"><small>Month 1</small><h4>Onboarding and approvals</h4>
-        <ul>
-          <li><b>Activities:</b> My application went through several departments for approval. A schedule was created for my first two months.</li>
-          <li><b>Achievement:</b> Approved and scheduled to start in the IT Department.</li>
-          <li><b>Challenge:</b> Waiting for approvals before I could begin.</li>
-          <li><b>Learning:</b> <span class="fill">[What this taught you about how a company works]</span></li>
-        </ul></div>
-      <div class="tl"><small>Months 2 to 3 &middot; <span class="fill">[dates]</span></small><h4>Network and call-centre support</h4>
-        <ul>
-          <li><b>Activities:</b> Assisting with network issues and supporting call-centre agents with system problems.</li>
-          <li><b>Achievement:</b> <span class="fill">[A problem you helped solve]</span></li>
-          <li><b>Challenge:</b> <span class="fill">[Something difficult]</span></li>
-          <li><b>Learning:</b> <span class="fill">[Skill gained]</span></li>
-        </ul></div>
-      <div class="tl"><small><span class="fill">[date]</span></small><h4><span class="fill">[Entry title]</span></h4>
-        <p><span class="fill">[Copy this block for each new entry.]</span></p></div>
-    </div>
-    <div class="callout"><h3>Note</h3><p>Entries contain no confidential company or member information.</p></div>
-  </div>
-  <div class="dfoot"><span>Agile Logbook</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 9. AGILE PROJECT CHARTER (UNIWORKS) ---------- -->
-<article class="doc" id="doc-agile-project-charter" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Entrepreneurial WIL Project</span>
-    <h1>UNIWORKS: Agile Project Charter</h1>
-    <p>The purpose, objectives, scope and stakeholders of our entrepreneurial project.</p>
-  </header>
-  <div class="dfacts">
-    <div class="dfact"><small>Project</small><p>UNIWORKS</p></div>
-    <div class="dfact"><small>Team size</small><p>6 members</p></div>
-    <div class="dfact"><small>Sprints</small><p>6</p></div>
-    <div class="dfact"><small>Tool</small><p>Trello</p></div>
-  </div>
-
-  <div class="dsec">
-    <h2>Purpose &amp; Vision</h2>
-    <p class="lead"><b>Problem:</b> <span class="fill">[the problem UNIWORKS solves]</span><br><b>Vision:</b> <span class="fill">[one sentence on the finished platform]</span></p>
-  </div>
-
-  <div class="dsec">
-    <h2>Objectives</h2>
-    <div class="dgrid" style="margin-top:24px">
-      <div class="dcard"><h3>Understand the market</h3><p>Identify the problem, research the market and analyse stakeholders and requirements.</p></div>
-      <div class="dcard"><h3>Define the platform</h3><p>Set the platform scope, beneficiary groups, goals and milestones.</p></div>
-      <div class="dcard"><h3>Grow on campuses</h3><p>Plan campus growth and university partnerships.</p></div>
-      <div class="dcard"><h3>Sustain the idea</h3><p>Develop a monetisation strategy.</p></div>
-      <div class="dcard"><h3>Plan and prototype</h3><p>Write user stories and requirements, estimate work and build a prototype.</p></div>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Scope</h2>
-    <div class="dgrid" style="margin-top:24px">
-      <div class="dcard"><h3>In scope</h3><ul><li>Platform scope and core system features</li><li>User segmentation and beneficiary groups</li><li>University partnerships and growth strategy</li><li>Monetisation strategy</li><li>Prototype</li></ul></div>
-      <div class="dcard"><h3>Out of scope</h3><p><span class="fill">[e.g. full production launch]</span></p></div>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Team &amp; Stakeholders</h2>
-    <div class="scroll" style="margin-top:24px"><table>
-      <tr><th>Who</th><th>Role</th></tr>
-      <tr><td>Sylvia Mahlangu</td><td><span class="fill">[your role]</span></td></tr>
-      <tr><td><span class="fill">[Team member names]</span></td><td><span class="fill">[roles]</span></td></tr>
-      <tr><td>Beneficiary groups</td><td>Intended users of the platform</td></tr>
-      <tr><td>Universities</td><td>Potential partners</td></tr>
-      <tr><td><span class="fill">[Lecturer]</span></td><td>Reviewer</td></tr>
-    </table></div>
-  </div>
-
-  <div class="dsec">
-    <h2>Our Way of Working</h2>
-    <p class="lead">We managed the project in Agile sprints on a shared Trello board, with team agreements, a Definition of Done and quality standards set in Sprint 2.</p>
-    <div class="evidence">
-      <img src="images/uniworks-trello.png" alt="UNIWORKS Trello board" onerror="this.style.display='none'">
-      <p>Screenshot: UNIWORKS Trello board (add your screenshot as <code>images/uniworks-trello.png</code>)</p>
-    </div>
-  </div>
-  <div class="dfoot"><span>Agile Project Charter</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 10. ENTREPRENEURIAL USER STORIES ---------- -->
-<article class="doc" id="doc-entrepreneurial-user-stories" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Entrepreneurial WIL Project</span>
-    <h1>UNIWORKS: User Stories &amp; Tasks</h1>
-    <p>Developed in Sprint 4 (User Stories &amp; Functional Requirements) and Sprint 5 (Acceptance Criteria).</p>
-  </header>
-
-  <div class="dsec">
-    <h2>How We Wrote Them</h2>
-    <div class="timeline" style="margin-top:24px">
-      <div class="tl"><small>Sprint 4 &middot; Day 1</small><h4>User Stories</h4><p>Wrote stories for each user group.</p></div>
-      <div class="tl"><small>Sprint 4 &middot; Day 2</small><h4>Functional Requirements</h4><p>Turned stories into system requirements.</p></div>
-      <div class="tl"><small>Sprint 4 &middot; Day 3</small><h4>Core System Features</h4><p>Identified the essential platform features.</p></div>
-      <div class="tl"><small>Sprint 5 &middot; Day 1</small><h4>Acceptance Criteria</h4><p>Defined when each story counts as done.</p></div>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Our User Stories</h2>
-    <p class="lead">Copy your real stories from the Trello board into the cards below.</p>
-    <div class="story"><span class="id">US-01 &middot; <span class="badge high">High</span></span>
-      <p><span class="fill">As a [user group], I want [goal], so that [benefit].</span></p>
-      <ul><li><span class="fill">[Acceptance criterion]</span></li></ul></div>
-    <div class="story"><span class="id">US-02 &middot; <span class="badge med">Medium</span></span>
-      <p><span class="fill">As a [user group], I want [goal], so that [benefit].</span></p>
-      <ul><li><span class="fill">[Acceptance criterion]</span></li></ul></div>
-    <div class="story"><span class="id">US-03 &middot; <span class="badge low">Low</span></span>
-      <p><span class="fill">As a [user group], I want [goal], so that [benefit].</span></p>
-      <ul><li><span class="fill">[Acceptance criterion]</span></li></ul></div>
-  </div>
-  <div class="dfoot"><span>UNIWORKS User Stories</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 11. ENTREPRENEURIAL PRODUCT BACKLOG ---------- -->
-<article class="doc" id="doc-entrepreneurial-product-backlog" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Entrepreneurial WIL Project</span>
-    <h1>UNIWORKS: Product Backlog</h1>
-    <p>Prioritised in Sprint 4 (Day 4: Product Backlog Prioritisation) and estimated in Sprint 5.</p>
-  </header>
-  <div class="dsec">
-    <p class="lead">Replace the highlighted fields with your real backlog items and story points from Trello.</p>
-    <div class="scroll"><table>
-      <tr><th>Priority</th><th>ID</th><th>Item</th><th>Story points</th><th>Dependency</th><th>Status</th></tr>
-      <tr><td>1</td><td>PB-01</td><td><span class="fill">[Core feature]</span></td><td><span class="fill">[pts]</span></td><td><span class="fill">[..]</span></td><td><span class="badge done">Planned</span></td></tr>
-      <tr><td>2</td><td>PB-02</td><td><span class="fill">[Core feature]</span></td><td><span class="fill">[pts]</span></td><td><span class="fill">[..]</span></td><td><span class="badge todo">To do</span></td></tr>
-      <tr><td>3</td><td>PB-03</td><td><span class="fill">[Feature]</span></td><td><span class="fill">[pts]</span></td><td><span class="fill">[..]</span></td><td><span class="badge todo">To do</span></td></tr>
-      <tr><td>4</td><td>PB-04</td><td><span class="fill">[Partnership / growth item]</span></td><td><span class="fill">[pts]</span></td><td><span class="fill">[..]</span></td><td><span class="badge todo">To do</span></td></tr>
-      <tr><td>5</td><td>PB-05</td><td><span class="fill">[Monetisation item]</span></td><td><span class="fill">[pts]</span></td><td><span class="fill">[..]</span></td><td><span class="badge todo">To do</span></td></tr>
-    </table></div>
-  </div>
-  <div class="dsec">
-    <h2>How the Backlog Was Built</h2>
-    <div class="timeline" style="margin-top:24px">
-      <div class="tl"><small>Sprint 4 &middot; Day 4</small><h4>Product Backlog Prioritisation</h4><p>Ordered features by value and importance.</p></div>
-      <div class="tl"><small>Sprint 5 &middot; Day 2</small><h4>Story Point Estimation</h4><p>Estimated the effort for each story.</p></div>
-      <div class="tl"><small>Sprint 5 &middot; Day 3</small><h4>Dependencies</h4><p>Identified which items depend on others.</p></div>
-    </div>
-  </div>
-  <div class="dfoot"><span>UNIWORKS Product Backlog</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 12. ENTREPRENEURIAL SPRINT BACKLOG ---------- -->
-<article class="doc" id="doc-entrepreneurial-sprint-backlog" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Entrepreneurial WIL Project</span>
-    <h1>UNIWORKS: Sprint Backlog</h1>
-    <p>Six sprints planned and tracked on our Trello board, each broken into daily tasks.</p>
-  </header>
-  <div class="dsec">
-    <h2>Sprint Overview</h2>
-    <div class="scroll" style="margin-top:24px"><table>
-      <tr><th>Sprint</th><th>Focus</th><th>Daily tasks</th><th>Progress</th></tr>
-      <tr><td>Sprint 1</td><td>Project Initiation &amp; Foundation</td><td>Project Vision &amp; Problem Identification &middot; Stakeholder &amp; Requirements Analysis &middot; Research &amp; Market Analysis &middot; Agile Planning &amp; Team&hellip;</td><td><span class="badge done">Complete</span></td></tr>
-      <tr><td>Sprint 2</td><td>Agile Setup &amp; Team Agreements</td><td>Board &amp; Workspace Setup &middot; Team Vision, Mission and Communication &middot; Definition of Done &amp; Quality Standards</td><td><span class="badge done">25/25 Complete</span></td></tr>
-      <tr><td>Sprint 3</td><td>Platform Scope and Growth Strategy</td><td>Beneficiary Groups &amp; User Segmentation &middot; Goals &amp; Milestones &middot; Campus Growth &amp; University Partnerships &middot; Monetization Strategy</td><td><span class="badge progress">18/25 at last check</span></td></tr>
-      <tr><td>Sprint 4</td><td>User Stories &amp; Functional Requirements</td><td>User Stories &middot; Functional Requirements &middot; Core System Features &middot; Product Backlog Prioritization</td><td><span class="badge done">25/25 Complete</span></td></tr>
-      <tr><td>Sprint 5</td><td>Agile Estimation, Dependencies &amp; Sprint 2 Setup</td><td>Acceptance Criteria &middot; Story Point Estimation &middot; Dependencies &middot; Sprint 2 Planning</td><td><span class="badge done">25/25 Complete</span></td></tr>
-      <tr><td>Sprint 6</td><td>Prototype <span class="fill">[full title]</span></td><td><span class="fill">[daily tasks]</span></td><td><span class="badge done">Complete</span></td></tr>
-    </table></div>
-    <p class="lead" style="margin-top:12px"><span class="fill">Check Sprint 3 on Trello: it showed 18/25 and some days at 0/5. Update it if it's now complete.</span></p>
-  </div>
-
-  <div class="dsec">
-    <h2>Trello Board</h2>
-    <div class="evidence" style="margin-top:24px">
-      <img src="images/uniworks-trello.png" alt="UNIWORKS Trello board with six sprints" onerror="this.style.display='none'">
-      <p>Screenshot: UNIWORKS Trello board (save as <code>images/uniworks-trello.png</code>)</p>
-    </div>
-  </div>
-
-  <div class="dsec">
-    <h2>Blockers &amp; Review</h2>
-    <div class="dgrid" style="margin-top:24px">
-      <div class="dcard"><h3>Blockers</h3><p><span class="fill">[..]</span></p></div>
-      <div class="dcard"><h3>What we improved</h3><p><span class="fill">[..]</span></p></div>
-    </div>
-  </div>
-  <div class="dfoot"><span>UNIWORKS Sprint Backlog</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
-<!-- ---------- 13. ENTREPRENEURIAL AGILE LOGBOOK ---------- -->
-<article class="doc" id="doc-entrepreneurial-agile-logbook" data-nav="#agile">
-  <header class="dhero">
-    <a class="back" href="#agile">&larr; Back to portfolio</a>
-    <span class="tag">Entrepreneurial WIL Project</span>
-    <h1>UNIWORKS: Agile Logbook</h1>
-    <p>Our progress sprint by sprint, with reflections.</p>
-  </header>
-  <div class="dsec">
-    <div class="timeline">
-      <div class="tl"><small>Sprint 1</small><h4>Project Initiation &amp; Foundation</h4>
-        <ul><li><b>Activities:</b> Project vision and problem identification, stakeholder and requirements analysis, research and market analysis, Agile planning.</li>
-        <li><b>Reflection:</b> <span class="fill">[What you learned]</span></li></ul></div>
-      <div class="tl"><small>Sprint 2</small><h4>Agile Setup &amp; Team Agreements</h4>
-        <ul><li><b>Activities:</b> Set up the Trello board and workspace, agreed the team vision, mission and communication, defined Done and quality standards.</li>
-        <li><b>Reflection:</b> <span class="fill">[..]</span></li></ul></div>
-      <div class="tl"><small>Sprint 3</small><h4>Platform Scope and Growth Strategy</h4>
-        <ul><li><b>Activities:</b> Beneficiary groups and user segmentation, goals and milestones, campus growth and university partnerships, monetisation strategy.</li>
-        <li><b>Reflection:</b> <span class="fill">[..]</span></li></ul></div>
-      <div class="tl"><small>Sprint 4</small><h4>User Stories &amp; Functional Requirements</h4>
-        <ul><li><b>Activities:</b> Wrote user stories and functional requirements, defined core system features, prioritised the product backlog.</li>
-        <li><b>Reflection:</b> <span class="fill">[..]</span></li></ul></div>
-      <div class="tl"><small>Sprint 5</small><h4>Agile Estimation, Dependencies &amp; Sprint 2 Setup</h4>
-        <ul><li><b>Activities:</b> Acceptance criteria, story point estimation, dependencies, planning the next sprint.</li>
-        <li><b>Reflection:</b> <span class="fill">[..]</span></li></ul></div>
-      <div class="tl"><small>Sprint 6</small><h4>Prototype <span class="fill">[full title]</span></h4>
-        <ul><li><b>Activities:</b> <span class="fill">[..]</span></li>
-        <li><b>Reflection:</b> <span class="fill">[..]</span></li></ul></div>
-    </div>
-    <div class="callout"><h3>Overall retrospective</h3><p><b>What went well:</b> <span class="fill">[..]</span><br><b>What I'd improve:</b> <span class="fill">[..]</span></p></div>
-  </div>
-  <div class="dfoot"><span>UNIWORKS Agile Logbook</span><a href="#agile">Back to portfolio</a></div>
-</article>
-
+  </section>
 </main>
 
-<script>
-  /* ---------- mobile menu ---------- */
-  const sidebar = document.getElementById('sidebar');
-  document.getElementById('menuBtn').addEventListener('click', () => sidebar.classList.toggle('open'));
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-mark">Sylvia Mahlangu · WIL Portfolio</div>
+    <div>CPUT · ICT Application Development · 2026</div>
+    <div>Learning with purpose.</div>
+  </div>
+</footer>
 
-  /* ---------- sidebar highlight ---------- */
-  const links = [...document.querySelectorAll('#nav a')];
-  const homeView = document.getElementById('view-home');
-  const docs = [...document.querySelectorAll('.doc')];
-  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
-
-  function highlight(index){ links.forEach((a, i) => a.classList.toggle('active', i === index)); }
-
-  function spy(){
-    if (homeView.style.display === 'none') return;
-    let current = 0;
-    sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 160) current = i; });
-    highlight(current);
-  }
-  window.addEventListener('scroll', spy);
-
-  /* ---------- one-page routing: cards open documents on this same page ---------- */
-  function route(){
-    const id = location.hash.slice(1);
-    const target = id ? document.getElementById(id) : null;
-
-    if (target && target.classList.contains('doc')){
-      homeView.style.display = 'none';
-      docs.forEach(d => d.style.display = (d === target) ? 'block' : 'none');
-      const idx = links.findIndex(a => a.getAttribute('href') === target.dataset.nav);
-      highlight(idx >= 0 ? idx : 0);
-      window.scrollTo(0, 0);
-    } else {
-      docs.forEach(d => d.style.display = 'none');
-      homeView.style.display = 'block';
-      if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
-      spy();
-    }
-  }
-  window.addEventListener('hashchange', route);
-  links.forEach(a => a.addEventListener('click', () => sidebar.classList.remove('open')));
-  route();
-</script>
 </body>
 </html>
+
